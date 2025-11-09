@@ -126,6 +126,7 @@
     wget
     lshw
     pkgs.vscode
+    pkgs.netease-cloud-music-gtk
   ];
   environment.variables ={
   EDITOR = "vim";
