@@ -84,11 +84,6 @@
 #     usbutils # lsusb
 #   ];
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  programs.clash-verge.enable = true;
-
   # git 相关配置
   programs.git = {
     enable = true;
