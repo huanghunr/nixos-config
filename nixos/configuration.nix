@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nvidia.nix
+      ./modules/nvidia.nix
+      ./modules/bluetooth.nix
     ];
 
   # Bootloader.
@@ -43,7 +44,7 @@
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
   };
-  #A simple example for Simplified Chinese:
+  # Simplified Chinese:
    i18n.inputMethod = {
      type = "fcitx5";
      enable = true;
@@ -65,6 +66,8 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
+  # services.xserver.videoDrivers = [ "modesetting" ]; 
+  # services.xserver.videoDrivers = [ "intel" ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -109,10 +112,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-  programs.clash-verge.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -125,8 +124,8 @@
     vim
     wget
     lshw
-    pkgs.vscode
-    pkgs.netease-cloud-music-gtk
+    btop
+    intel-gpu-tools
   ];
   environment.variables ={
   EDITOR = "vim";
