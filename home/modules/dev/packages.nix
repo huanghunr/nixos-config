@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-master,
+  # pkgs-master,
   ...
 }:
 {
@@ -37,7 +37,7 @@
         marksman # language server for markdown
         glow # markdown previewer
         pandoc # document converter
-        pkgs-master.hugo # static site generator
+        # pkgs-master.hugo # static site generator
 
         #-- sql
         sqlfluff
@@ -91,11 +91,11 @@
 
           #-- rust
           # we'd better use the rust-overlays for rust development
-          pkgs-master.rustc
-          pkgs-master.rust-analyzer
-          pkgs-master.cargo # rust package manager
-          pkgs-master.rustfmt
-          pkgs-master.clippy # rust linter
+          # pkgs-master.rustc
+          # pkgs-master.rust-analyzer
+          # pkgs-master.cargo # rust package manager
+          # pkgs-master.rustfmt
+          # pkgs-master.clippy # rust linter
 
           #-- golang
           go

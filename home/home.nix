@@ -8,7 +8,7 @@
   imports = [
     ./modules/theme/theme.nix
     ./modules/neovim
-    # ./modules/dev/packages.nix
+    ./modules/dev/packages.nix
   ];
 
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
