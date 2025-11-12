@@ -1,9 +1,9 @@
 { catppuccin, ... }:
 {
   # https://github.com/catppuccin/nix
-  imports = [
-    catppuccin.homeModules.catppuccin
-  ];
+#   imports = [
+#     catppuccin.homeModules.catppuccin
+#   ];
 
   catppuccin = {
     # The default `enable` value for all available programs.
