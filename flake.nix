@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    # pkgs-master.url = "github:NixOS/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -16,26 +16,23 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-master, home-manager, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, pkgs-master, home-manager, catppuccin, ... }@inputs:
   let
     system = "x86_64-linux";
 
     # 导入两个不同版本的 nixpkgs
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    # pkgs = import nixpkgs {
+    #   inherit system;
+    #   config.allowUnfree = true;
+    # };
 
-    pkgs-master = import nixpkgs-master {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    # pkgs-master = import nixpkgs-master {
+    #   inherit system;
+    #   config.allowUnfree = true;
+    # };
   in {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {
-        inherit inputs pkgs pkgs-master;
-      };
 
       modules = [
         ./nixos/configuration.nix
@@ -54,7 +51,7 @@
           };
 
           # 如果希望在 home.nix 里直接访问 inputs，也可以加上这行：
-          # home-manager.extraSpecialArgs = inputs;
+          home-manager.extraSpecialArgs = inputs;
         }
       ];
     };

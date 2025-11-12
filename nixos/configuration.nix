@@ -135,6 +135,10 @@
   EDITOR = "vim";
   XMODIFIERS = "@im=fcitx";
   };
+    environment.etc = {
+    "resolv.conf".text = "github.com 20.205.243.166\n";
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
