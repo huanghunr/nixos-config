@@ -2,12 +2,9 @@
   description = "My NixOS flake";
 
   inputs = {
-    # NixOS source nixos-25.05 branch
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    # home-manager, used for managing user configuration
-    # The `follows` keyword in inputs is used for inheritance.
-    # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
-    # to avoid problems caused by different versions of nixpkgs dependencies.
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,17 +16,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs: {
-    # 我的 hostname 是 nixos
+  outputs = { self, nixpkgs, nixpkgs-master, home-manager, catppuccin, ... }@inputs:
+  let
+    system = "x86_64-linux";
+
+    # 导入两个不同版本的 nixpkgs
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    pkgs-master = import nixpkgs-master {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit inputs pkgs pkgs-master;
+      };
+
       modules = [
-        # import configuration.nix
         ./nixos/configuration.nix
-        # 将 home-manager 配置为 nixos 的一个 module
-        # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
         catppuccin.nixosModules.catppuccin
-        
         home-manager.nixosModules.home-manager
+
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -41,8 +53,7 @@
             ];
           };
 
-          # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
-          # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
+          # 如果希望在 home.nix 里直接访问 inputs，也可以加上这行：
           # home-manager.extraSpecialArgs = inputs;
         }
       ];
