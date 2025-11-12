@@ -7,6 +7,8 @@
 
   imports = [
     ./modules/theme/theme.nix
+    ./modules/neovim
+    ./modules/dev/packages.nix
   ];
 
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
@@ -17,6 +19,7 @@
   home.packages = with pkgs; [
     netease-cloud-music-gtk
     vscode
+    tree
   ];
   # 通过 home.packages 安装一些常用的软件
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
