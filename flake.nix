@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, pkgs-master, home-manager, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
   let
     system = "x86_64-linux";
 
