@@ -21,7 +21,7 @@
     vscode
     tree
     qq
-    wechat
+    # wechat
   ];
   # 通过 home.packages 安装一些常用的软件
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
@@ -133,6 +133,8 @@
     # TODO 在这里添加你的自定义 bashrc 内容
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      export http_proxy="http://127.0.0.1:7897"
+      export https_proxy="http://127.0.0.1:7897"
     '';
 
     # TODO 设置一些别名方便使用，你可以根据自己的需要进行增删
