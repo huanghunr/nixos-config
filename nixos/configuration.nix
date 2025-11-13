@@ -134,6 +134,8 @@
   environment.variables ={
   EDITOR = "vim";
   XMODIFIERS = "@im=fcitx";
+  http_proxy="http://127.0.0.1:7897";
+  https_proxy="http://127.0.0.1:7897";
   };
   #   environment.etc = {
   #   "resolv.conf".text = "github.com 140.82.121.4\n";
