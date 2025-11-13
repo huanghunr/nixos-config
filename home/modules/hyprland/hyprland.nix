@@ -1,4 +1,4 @@
-{inputs, pkgs, ...}:
+{pkgs, hyprland-plugins, ...}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -18,7 +18,7 @@
         ];
     };
     plugins = [
-        inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.PLUGIN_NAME
+        hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
     ];
   };
 }

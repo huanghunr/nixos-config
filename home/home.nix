@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # 注意修改这里的用户名与用户目录
@@ -9,6 +9,7 @@
     ./modules/theme/theme.nix
     ./modules/neovim
     ./modules/dev/packages.nix
+    ./modules/hyprland/hyprland.nix
   ];
 
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
