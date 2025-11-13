@@ -139,6 +139,11 @@
   #   "resolv.conf".text = "github.com 140.82.121.4\n";
   # };
 
+  # envs to be preserved when using sudo
+  security.sudo.extraConfig = ''
+    Defaults env_keep += "http_proxy https_proxy"
+  '';
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
