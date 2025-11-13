@@ -116,6 +116,13 @@
     clash-verge.enable = true;
   };
 
+  # hyprland - 一个动态的 Wayland 窗口管理器
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
