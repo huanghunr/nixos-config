@@ -23,6 +23,7 @@
     tree
     qq
     wechat
+    microsoft-edge
   ];
   
   # 通过 home.packages 安装一些常用的软件

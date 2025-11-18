@@ -137,7 +137,9 @@
     lshw
     btop
     intel-gpu-tools
+    kitty
   ];
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables ={
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";

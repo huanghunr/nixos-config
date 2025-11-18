@@ -21,9 +21,14 @@
       inputs.hyprland.follows = "hyprland"; # Prevents version mismatch.
     };
 
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, dms, ... }@inputs:
   let
     system = "x86_64-linux";
 
@@ -45,7 +50,8 @@
         ./nixos/configuration.nix
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
-
+        hyprland.nixosModules.default
+        # dms.homeModules.dankMaterialShell.default
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -54,6 +60,8 @@
             imports = [
               ./home/home.nix
               catppuccin.homeModules.catppuccin
+              hyprland.homeManagerModules.default
+              # dms.homeModules.dankMaterialShell.default
             ];
           };
 
