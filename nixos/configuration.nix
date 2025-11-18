@@ -63,13 +63,10 @@
     noto-fonts-emoji
    ];
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
+  # 启用显示管理器（SDDM），从登录界面进入 Hyprland
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.enable = true; # 不使用 Plasma 桌面
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -114,6 +111,8 @@
   programs = {
     firefox.enable = true;
     clash-verge.enable = true;
+    uwsm.enable = true;   # 从 TTY 启动 Wayland 会话的推荐方式
+    # fish.enable = true;   # 启用 fish shell
   };
 
   # hyprland - 一个动态的 Wayland 窗口管理器
@@ -122,6 +121,12 @@
     withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
   };
+
+  # 将用户默认 shell 切换为 fish
+  # users.users.huanghunr.shell = pkgs.fish;
+
+  # XDG 桌面门户：由 hyprland.nixosModules.default 提供，避免重复声明导致单元冲突
+  # 如需自定义再开启，否则保持由 Hyprland 模块管理
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -13,8 +13,9 @@
       enable = true;
       enableOffloadCmd = true;
 		};
-		# Make sure to use the correct Bus ID values for your system!
-		amdgpuBusId = "PCI:0:2:0";
+    # 注意：如果核显是 Intel，应使用 intelBusId 而非 amdgpuBusId
+    # 0:2:0 通常是 Intel iGPU 的地址
+    intelBusId = "PCI:0:2:0";
 		nvidiaBusId = "PCI:1:0:0";
 	};
   
