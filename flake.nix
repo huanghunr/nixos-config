@@ -60,7 +60,6 @@
             imports = [
               ./home/home.nix
               catppuccin.homeModules.catppuccin
-              hyprland.homeManagerModules.default
               # dms.homeModules.dankMaterialShell.default
             ];
           };
