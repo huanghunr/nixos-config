@@ -28,7 +28,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, dms, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, ... }@inputs:
   let
     system = "x86_64-linux";
 
@@ -45,6 +45,7 @@
   in {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit inputs; };
 
       modules = [
         ./nixos/configuration.nix

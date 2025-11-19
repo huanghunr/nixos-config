@@ -6,7 +6,7 @@
   home.homeDirectory = "/home/huanghunr";
 
   imports = [
-    ./modules/theme/theme.nix
+    # ./modules/theme/theme.nix
     ./modules/neovim
     ./modules/dev/packages.nix
     ./modules/hyprland/hyprland.nix
@@ -24,6 +24,8 @@
     qq
     wechat
     microsoft-edge
+    p7zip
+    unrar
   ];
   
   # 通过 home.packages 安装一些常用的软件

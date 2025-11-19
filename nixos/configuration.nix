@@ -1,12 +1,9 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  #hardware
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ./modules/nvidia.nix
       ./modules/bluetooth.nix
@@ -16,7 +13,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -63,10 +60,10 @@
     noto-fonts-emoji
    ];
 
-  # 启用显示管理器（SDDM），从登录界面进入 Hyprland
+  # SDDM
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true; # 不使用 Plasma 桌面
+  services.desktopManager.plasma6.enable = true; # if use Plasma desktop
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -94,7 +91,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.huanghunr = {
@@ -103,7 +100,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
   };
 
@@ -111,47 +107,39 @@
   programs = {
     firefox.enable = true;
     clash-verge.enable = true;
-    uwsm.enable = true;   # 从 TTY 启动 Wayland 会话的推荐方式
-    # fish.enable = true;   # 启用 fish shell
+    uwsm.enable = true;
+    fish.enable = true;
   };
 
-  # hyprland - 一个动态的 Wayland 窗口管理器
+  # hyprland
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
   };
 
-  # 将用户默认 shell 切换为 fish
-  # users.users.huanghunr.shell = pkgs.fish;
-
-  # XDG 桌面门户：由 hyprland.nixosModules.default 提供，避免重复声明导致单元冲突
-  # 如需自定义再开启，否则保持由 Hyprland 模块管理
+  # defult shell to fish
+  users.users.huanghunr.shell = pkgs.fish;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    git
-    vim
-    wget
-    lshw
-    btop
-    intel-gpu-tools
-    kitty
+
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.vim
+    pkgs.wget
+    pkgs.lshw
+    pkgs.btop
+    pkgs.intel-gpu-tools
+    pkgs.kitty
   ];
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables ={
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
   };
-  #   environment.etc = {
-  #   "resolv.conf".text = "github.com 140.82.121.4\n";
-  # };
 
   # envs to be preserved when using sudo
   security.sudo.extraConfig = ''
@@ -169,7 +157,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
