@@ -1,23 +1,41 @@
-{ config, pkgs, inputs, ...}:
 {
-  # 回到 Home Manager 的 hyprland 模块（wayland.windowManager.hyprland）
+  pkgs,
+  config,
+  ...
+}:
+let
+  package = pkgs.hyprland;
+in
+{
+  # NOTE:
+  # We have to enable hyprland/i3's systemd user service in home-manager,
+  # so that gammastep/wallpaper-switcher's user service can be start correctly!
+  # they are all depending on hyprland/i3's user graphical-session
   wayland.windowManager.hyprland = {
+    inherit package;
     enable = true;
-
-    # 插件（通过 hyprland-plugins 提供的预构建二进制）
-    plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprtrails
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-    ];
-
-    # 将同目录下的 hyprland.conf 合并为额外配置
-    # 这样会写入到 ~/.config/hypr/hyprland.conf（由 HM 生成）中
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = builtins.concatStringsSep "\n"
+    (map builtins.readFile [
+      "./conf/exec.conf"
+      "./conf/fcitx5.conf"
+      "./conf/keybindings.conf"
+      "./conf/settings.conf"
+      # "./conf/windowrules.conf"
+    ]);
+    # gammastep/wallpaper-switcher need this to be enabled.
+    systemd = {
+      enable = true;
+    };
   };
+  services.polkit-gnome.enable = true; # polkit
 
-  # 常用 Wayland 组件与工具
+  # NOTE: this executable is used by greetd to start a wayland session when system boot up
+  # with such a vendor-no-locking script, we can switch to another wayland compositor without modifying greetd's config in NixOS module
+  # home.file.".wayland-session" = {
+  #   source = "${package}/bin/Hyprland";
+  #   executable = true;
+  # };
+    # 常用 Wayland 组件与工具
   home.packages = with pkgs; [
     # Bar & 通知 & 启动器
     waybar
@@ -26,11 +44,9 @@
 
     # 终端与文件管理
     kitty
-    ranger
-    nemo
 
     # 锁屏
-    swaylock-effects
+    swaylock
 
     # 截图/录屏/剪贴板
     grimblast
@@ -52,8 +68,8 @@
 
     # 多媒体创作
     obs-studio
-  ];
+    playerctl
 
-  # 启用通知服务（mako）
-  services.mako.enable = true;
+    brightnessctl
+  ];
 }
