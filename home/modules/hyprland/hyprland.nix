@@ -1,4 +1,4 @@
-{ pkgs, hyprland-plugins, ... }:
+{ config, pkgs, inputs, ...}:
 {
   # 回到 Home Manager 的 hyprland 模块（wayland.windowManager.hyprland）
   wayland.windowManager.hyprland = {
@@ -6,10 +6,10 @@
 
     # 插件（通过 hyprland-plugins 提供的预构建二进制）
     plugins = [
-      hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-      hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
-      hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprtrails
-      hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprtrails
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
     ];
 
     # 将同目录下的 hyprland.conf 合并为额外配置

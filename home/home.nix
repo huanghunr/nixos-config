@@ -26,6 +26,7 @@
     microsoft-edge
     p7zip
     unrar
+    anyrun
   ];
   
   # 通过 home.packages 安装一些常用的软件

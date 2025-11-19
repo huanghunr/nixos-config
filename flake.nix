@@ -66,7 +66,7 @@
           };
 
           # 如果希望在 home.nix 里直接访问 inputs，也可以加上这行：
-          home-manager.extraSpecialArgs = inputs;
+          home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];
     };
