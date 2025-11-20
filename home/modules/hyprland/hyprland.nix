@@ -7,6 +7,13 @@ let
   package = pkgs.hyprland;
 in
 {
+
+  imports = [
+    ./keybindings.nix
+    ./exec.nix
+    ./settings.nix
+  ];
+
   # NOTE:
   # We have to enable hyprland/i3's systemd user service in home-manager,
   # so that gammastep/wallpaper-switcher's user service can be start correctly!
@@ -14,14 +21,6 @@ in
   wayland.windowManager.hyprland = {
     inherit package;
     enable = true;
-    extraConfig = builtins.concatStringsSep "\n"
-    (map builtins.readFile [
-      "./conf/exec.conf"
-      "./conf/fcitx5.conf"
-      "./conf/keybindings.conf"
-      "./conf/settings.conf"
-      # "./conf/windowrules.conf"
-    ]);
     # gammastep/wallpaper-switcher need this to be enabled.
     systemd = {
       enable = true;
