@@ -8,13 +8,6 @@ let
   cfg = config.modules.desktop.hyprland;
 in
 {
-  
-  imports = [
-    ./conf/keybindings.nix
-    ./conf/exec.nix
-    ./conf/settings.nix
-  ];
-  
   options.modules.desktop.hyprland = {
     enable = lib.mkEnableOption "hyprland compositor";
     settings = lib.mkOption {

@@ -7,6 +7,15 @@ let
   package = pkgs.hyprland;
 in
 {
+  xdg.configFile =
+    let
+      mkSymlink = config.lib.file.mkOutOfStoreSymlink;
+      confPath = "${config.home.homeDirectory}/nixos-config/home/modules/hyprland/conf";
+    in
+    {
+      "hypr/configs".source = mkSymlink confPath;
+    };
+
   # NOTE:
   # We have to enable hyprland/i3's systemd user service in home-manager,
   # so that gammastep/wallpaper-switcher's user service can be start correctly!
@@ -14,6 +23,22 @@ in
   wayland.windowManager.hyprland = {
     inherit package;
     enable = true;
+    settings = {
+      source =
+        let
+          configPath = "${config.home.homeDirectory}/.config/hypr/configs";
+        in
+        [
+          "${configPath}/exec.conf"
+          "${configPath}/fcitx5.conf"
+          "${configPath}/keybindings.conf"
+          "${configPath}/settings.conf"
+          "${configPath}/windowrules.conf"
+        ];
+      env = [
+
+      ];
+    };
     # gammastep/wallpaper-switcher need this to be enabled.
     systemd = {
       enable = true;
