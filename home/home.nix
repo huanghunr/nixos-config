@@ -11,6 +11,7 @@
     ./modules/dev/packages.nix
     ./modules/hyprland
     ./modules/yazi.nix
+    ./modules/zellij.nix
   ];
 
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
@@ -28,7 +29,6 @@
     p7zip
     unrar
     anyrun
-    zellij
   ];
   
   # 通过 home.packages 安装一些常用的软件

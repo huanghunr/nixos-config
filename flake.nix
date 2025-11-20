@@ -29,10 +29,10 @@
     yazi = {
       url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, yazi, ... }@inputs:
   let
     system = "x86_64-linux";
 
