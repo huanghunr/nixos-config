@@ -7,13 +7,6 @@ let
   package = pkgs.hyprland;
 in
 {
-
-  imports = [
-    ./keybindings.nix
-    ./exec.nix
-    ./settings.nix
-  ];
-
   # NOTE:
   # We have to enable hyprland/i3's systemd user service in home-manager,
   # so that gammastep/wallpaper-switcher's user service can be start correctly!
