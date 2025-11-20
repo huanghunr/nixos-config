@@ -139,6 +139,8 @@
   environment.variables ={
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
+    http_proxy = "127.0.0.1:7897";
+    https_proxy = "127.0.0.1:7897";
   };
 
   # envs to be preserved when using sudo

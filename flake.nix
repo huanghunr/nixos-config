@@ -46,6 +46,11 @@
     #   inherit system;
     #   config.allowUnfree = true;
     # };
+      overlays = with inputs; [
+      (final: prev: {
+        zjstatus = zjstatus.packages.${prev.system}.default;
+      })
+    ];
 
     # pkgs-master = import nixpkgs-master {
     #   inherit system;
