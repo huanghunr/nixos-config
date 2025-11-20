@@ -3,12 +3,10 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      
-      "terminal" = "kitty";
-      "fileManager" = "dolphin";
-      "menu" = "wofi --show drun";
-
-      evn = [
+      "$terminal" = "kitty";
+      "$fileManager" = "dolphin";
+      "$menu" = "wofi --show drun";
+      env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
       ];
@@ -111,7 +109,7 @@
       };
 
       master = {
-        new_status = master;
+        new_status = "master";
       };
 
       input = {
@@ -140,8 +138,7 @@
       };
 
       monitor = [
-        "eDP-1, 2560x1600@240, 3840x0, 1.25"
-        "HDMI-A-3, 3840x2160@60, 0x0, 1.5"
+        "monitor=,preferred,auto,auto"
       ];
     };
   };
