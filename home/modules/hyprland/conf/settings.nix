@@ -138,7 +138,8 @@
       };
 
       monitor = [
-        "monitor=,preferred,auto,auto"
+        "eDP-1 ,2560x1600@240, 0x0, 1.25"
+        "HDMI-A-3, 3840x2160@60, -2560x0, 1.5"
       ];
     };
   };
