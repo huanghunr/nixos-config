@@ -2,17 +2,21 @@
 
 {
   wayland.windowManager.hyprland = {
-
     settings = {
-        windowrulev = [
-            "windowrule=pseudo,class:^(fcitx)$"
-        ];
+      
+      "terminal" = "kitty";
+      "fileManager" = "dolphin";
+      "menu" = "wofi --show drun";
 
-      #
-      # ===========================
-      # WINDOWS & BORDERS (general)
-      # ===========================
-      #
+      evn = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
+
+      windowrule = [
+        "pseudo, class:^(fcitx)$"
+      ];
+
       general = {
         layout = "dwindle";
         no_focus_fallback = true;
@@ -30,43 +34,24 @@
         allow_tearing = false;
       };
 
-      #
-      # ==========
-      # CURSOR
-      # ==========
-      #
       cursor = {
         inactive_timeout = 900;
         no_warps = false;
       };
 
-      #
-      # ==========
-      # ECOSYSTEM
-      # ==========
-      #
       ecosystem = {
         no_donation_nag = true;
         no_update_news = true;
       };
 
-      #
-      # ==========
-      # MISC
-      # ==========
-      #
       misc = {
         focus_on_activate = false;
         disable_hyprland_logo = true;
       };
 
-      #
-      # ===========================
-      # VISUAL EFFECTS (decoration)
-      # ===========================
-      #
       decoration = {
-        rounding = 8;
+        rounding = 10;
+        rounding_power = 2;
 
         shadow = {
           enabled = true;
@@ -88,46 +73,47 @@
         };
       };
 
-      #
-      # ===========================
-      # ANIMATIONS
-      # ===========================
-      #
       animations = {
         enabled = true;
 
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = [
+          "easeOutQuint,   0.23, 1,    0.32, 1"
+          "easeInOutCubic, 0.65, 0.05, 0.36, 1"
+          "linear,         0,    0,    1,    1"
+          "almostLinear,   0.5,  0.5,  0.75, 1"
+          "quick,          0.15, 0,    0.1,  1"
+        ];
 
         animation = [
-          "windows,          1, 2, myBezier"
-          "windowsOut,       1, 2, default, popin 80%"
-          "border,           1, 5, default"
-          "fadeIn,           1, 2, default"
-          "fadeOut,          1, 2, default"
-          "workspaces,       1, 6, default, fade"
-          "specialWorkspace, 1, 3, myBezier, slide"
+          "global,        1,     10,    default"
+          "border,        1,     5.39,  easeOutQuint"
+          "windows,       1,     4.79,  easeOutQuint"
+          "windowsIn,     1,     4.1,   easeOutQuint, popin 87%"
+          "windowsOut,    1,     1.49,  linear,       popin 87%"
+          "fadeIn,        1,     1.73,  almostLinear"
+          "fadeOut,       1,     1.46,  almostLinear"
+          "fade,          1,     3.03,  quick"
+          "layers,        1,     3.81,  easeOutQuint"
+          "layersIn,      1,     4,     easeOutQuint, fade"
+          "layersOut,     1,     1.5,   linear,       fade"
+          "fadeLayersIn,  1,     1.79,  almostLinear"
+          "fadeLayersOut, 1,     1.39,  almostLinear"
+          "workspaces,    1,     1.94,  almostLinear, fade"
+          "workspacesIn,  1,     1.21,  almostLinear, fade"
+          "workspacesOut, 1,     1.94,  almostLinear, fade"
+          "zoomFactor,    1,     7,     quick"
         ];
       };
 
-      #
-      # ===========================
-      # LAYOUT DETAILS
-      # ===========================
-      #
       dwindle = {
         pseudotile = true;
         preserve_split = true;
       };
 
       master = {
-        new_on_top = true;
+        new_status = master;
       };
 
-      #
-      # ===========================
-      # INPUT DEVICES
-      # ===========================
-      #
       input = {
         kb_layout = "us";
         kb_variant = "";
@@ -153,14 +139,9 @@
         numlock_by_default = 1;
       };
 
-      #
-      # ===========================
-      # MONITORS
-      # ===========================
-      #
       monitor = [
-        "HDMI-A-3, preferred, 0x0, 1.5"
-        "eDP-1, preferred, 3840x0, 1.25"
+        "eDP-1, 2560x1600@240, 3840x0, 1.25"
+        "HDMI-A-3, 3840x2160@60, 0x0, 1.5"
       ];
     };
   };
