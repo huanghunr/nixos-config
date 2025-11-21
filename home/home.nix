@@ -12,6 +12,7 @@
     ./modules/hyprland
     ./modules/yazi.nix
     ./modules/zellij.nix
+    ./modules/mako
   ];
 
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
