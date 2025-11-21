@@ -2,10 +2,10 @@
 {
     wayland.windowManager.hyprland.settings = {
         exec-once = [
-            "kitty"
+            "zellij &"
             "clash-verge &"
             "waybar &"
-            "mako &"
+            "microsoft-edge &"
         ];
     };
 }
