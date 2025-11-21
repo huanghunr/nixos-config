@@ -6,6 +6,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
+      "$browser" = "microsoft-edge";
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
