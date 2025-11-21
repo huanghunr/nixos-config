@@ -1,14 +1,8 @@
-{config,lib,inputs, ... }:{
-  programs.mako = {
-    enable = true;
-  };
-
-  xdg.configFile =
-  let
-    mkSymlink = config.lib.file.mkOutOfStoreSymlink;
-    confPath = "./conf";
-  in
-  {
-    "mako".source = mkSymlink "${confPath}/mako";
-  };
+{config,lib,inputs, ... }:
+let
+  mkSymlink = config.lib.file.mkOutOfStoreSymlink;
+  confPath = "${config.home.homeDirectory}/nixos-config/home/modules/mako/conf";
+in
+{
+  xdg.configFile."mako".source = mkSymlink "${confPath}";
 }
