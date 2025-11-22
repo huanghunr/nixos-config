@@ -55,5 +55,9 @@ in
     brightnessctl
 
     foot
+
+    alsa-utils
+
+    pavucontrol
   ];
 }
