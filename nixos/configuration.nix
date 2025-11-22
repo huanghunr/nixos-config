@@ -7,6 +7,7 @@
       ./hardware-configuration.nix
       ./modules/nvidia.nix
       ./modules/bluetooth.nix
+      ./modules/theme/fonts.nix
     ];
 
   # Bootloader.
