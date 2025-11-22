@@ -53,5 +53,7 @@ in
     playerctl
 
     brightnessctl
+
+    foot
   ];
 }

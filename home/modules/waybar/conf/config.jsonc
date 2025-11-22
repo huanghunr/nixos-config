@@ -91,8 +91,8 @@
   "network": {
     "interval": 5,
     "format": "{ifname}",
-    "format-wifi": "  {signalStrength}% Down: {bandwidthDownBytes} Up: {bandwidthUpBytes} {essid}",
-    "format-ethernet": "  {ifname} Down: {bandwidthDownBytes} Up: {bandwidthUpBytes}",
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "  {ifname}",
     "format-disconnected": "Disconnected ⚠",
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nDown: {bandwidthDownBytes} Up: {bandwidthUpBytes}",
