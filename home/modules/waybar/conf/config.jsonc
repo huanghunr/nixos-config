@@ -39,13 +39,13 @@
     "align": 0,
     "rotate": 0,
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%H:%M}",
-    "format-alt": " {:%a %b %d, %G}",
+    "format": "  {:%H:%M}",
+    "format-alt": "  {:%a %b %d, %G}",
   },
   "cpu": {
     "format": "CPU {usage}%",
     "interval": 1,
-    "on-click-middle": "foot btop",
+    "on-click": "foot btop",
     "on-click-right": "foot btop",
   },
   "memory": {
@@ -105,7 +105,7 @@
   "pulseaudio": {
     //"format": "{volume}% {icon} {format_source}",
     "format": "{icon} {volume}%",
-    "format-muted": " Mute",
+    "format-muted": "  Mute",
     "format-bluetooth": " {volume}% {format_source}",
     "format-bluetooth-muted": " Mute",
     "format-source": " {volume}%",

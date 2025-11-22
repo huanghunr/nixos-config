@@ -54,18 +54,22 @@
    };
    fonts.packages = with pkgs; [
     adwaita-fonts
+    material-design-icons
     noto-fonts-color-emoji
     nerd-fonts.symbols-only
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-emoji
-    nerd-fonts
    ];
 
   # SDDM
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true; # if use Plasma desktop
+  services.noctalia-shell.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

@@ -35,6 +35,10 @@
       url = "github:dj95/zjstatus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, yazi, ... }@inputs:
@@ -66,6 +70,7 @@
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
         hyprland.nixosModules.default
+        inputs.noctalia.nixosModules.default
         # dms.homeModules.dankMaterialShell.default
         {
           home-manager.useGlobalPkgs = true;
@@ -76,6 +81,7 @@
             imports = [
               ./home/home.nix
               catppuccin.homeModules.catppuccin
+              inputs.noctalia.homeModules.default
               # dms.homeModules.dankMaterialShell.default
             ];
           };
