@@ -7,7 +7,7 @@
       ./hardware-configuration.nix
       ./modules/nvidia.nix
       ./modules/bluetooth.nix
-      ./modules/theme/fonts.nix
+      # ./modules/fonts.nix
     ];
 
   # Bootloader.
@@ -59,6 +59,7 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-emoji
+    nerd-fonts
    ];
 
   # SDDM
