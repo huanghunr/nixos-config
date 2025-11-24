@@ -5,27 +5,17 @@
     unstablepkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    # pkgs-master.url = "github:NixOS/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin = {
-      url = "github:catppuccin/nix/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland"; # Prevents version mismatch.
-    };
-
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
     };
 
     yazi = {
@@ -37,31 +27,23 @@
       url = "github:dj95/zjstatus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.unstablepkgs.follows = "unstablepkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, yazi, unstablepkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland-plugins, hyprland, ... }@inputs:
   let
     system = "x86_64-linux";
 
-    # 导入两个不同版本的 nixpkgs
-    # pkgs = import nixpkgs {
-    #   inherit system;
-    #   config.allowUnfree = true;
-    # };
       overlays = with inputs; [
       (final: prev: {
         zjstatus = zjstatus.packages.${prev.system}.default;
       })
     ];
 
-    # pkgs-master = import nixpkgs-master {
-    #   inherit system;
-    #   config.allowUnfree = true;
-    # };
   in {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -69,11 +51,13 @@
 
       modules = [
         ./nixos/configuration.nix
-        catppuccin.nixosModules.catppuccin
+
         home-manager.nixosModules.home-manager
+
         hyprland.nixosModules.default
+
         inputs.noctalia.nixosModules.default
-        # dms.homeModules.dankMaterialShell.default
+
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -82,13 +66,10 @@
           home-manager.users.huanghunr = {
             imports = [
               ./home/home.nix
-              catppuccin.homeModules.catppuccin
               inputs.noctalia.homeModules.default
-              # dms.homeModules.dankMaterialShell.default
             ];
           };
-
-          # 如果希望在 home.nix 里直接访问 inputs，也可以加上这行：
+          
           home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];

@@ -70,7 +70,7 @@
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
-        scaleRatio = 1;
+        scaleRatio = 0.9;
         radiusRatio = 1;
         screenRadiusRatio = 1;
         animationSpeed = 1;
@@ -152,7 +152,7 @@
         pinnedExecs = [ ];
         useApp2Unit = false;
         sortByMostUsed = true;
-        terminalCommand = "xterm -e";
+        terminalCommand = "kitty -e";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
       };
@@ -241,7 +241,7 @@
       };
       sessionMenu = {
         enableCountdown = true;
-        countdownDuration = 10000;
+        countdownDuration = 5000;
         position = "center";
         showHeader = true;
         powerOptions = [
@@ -276,7 +276,7 @@
         monitors = [ ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.4;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -289,7 +289,7 @@
         monitors = [ ];
         autoHideMs = 2000;
         overlayLayer = true;
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.5;
       };
       audio = {
         volumeStep = 5;

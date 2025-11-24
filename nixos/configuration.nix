@@ -7,7 +7,6 @@
       ./hardware-configuration.nix
       ./modules/nvidia.nix
       ./modules/bluetooth.nix
-      # ./modules/fonts.nix
     ];
 
   # Bootloader.
@@ -42,6 +41,7 @@
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
   };
+
   # Simplified Chinese:
    i18n.inputMethod = {
      type = "fcitx5";
@@ -52,6 +52,7 @@
        fcitx5-nord            # a color theme
      ];
    };
+
    fonts.packages = with pkgs; [
     adwaita-fonts
     material-design-icons
@@ -69,9 +70,6 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true; # if use Plasma desktop
-  # services.noctalia-shell = {
-  #   enable = true;
-  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
