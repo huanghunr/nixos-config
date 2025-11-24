@@ -13,7 +13,6 @@
     ./modules/zellij.nix
     ./modules/Noctalia
     ./modules/gtk.nix
-    ./modules/qt.nix
   ];
 
   # DPI and Xresources

@@ -145,6 +145,11 @@
     pkgs.kitty
   ];
 
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+  };
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables ={
     EDITOR = "vim";
