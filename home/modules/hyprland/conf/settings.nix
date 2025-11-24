@@ -5,8 +5,15 @@
     settings = {
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
+      "$menu" = "noctalia-shell ipc call launcher toggle";
       "$browser" = "microsoft-edge";
+      "$codeEditor" = "code";
+      "$controlCenter" = "noctalia-shell ipc call controlCenter toggle";
+      "$settingsManager" = "noctalia-shell ipc call settings toggle";
+      "$lockScreen" = "noctalia-shell ipc call lockScreen lock";
+      "$clipboardManager" = "noctalia-shell ipc call launcher clipboard";
+      "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
+
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
@@ -65,7 +72,7 @@
 
         blur = {
           enabled = true;
-          new_optimizations = true;
+          new_optimizations = false;
           size = 3;
           passes = 1;
           ignore_opacity = false;

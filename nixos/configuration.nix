@@ -69,7 +69,9 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true; # if use Plasma desktop
-  services.noctalia-shell.enable = true;
+  # services.noctalia-shell = {
+  #   enable = true;
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -98,6 +100,10 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+
+  services.power-profiles-daemon.enable = true;
+
+  services.upower.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.huanghunr = {

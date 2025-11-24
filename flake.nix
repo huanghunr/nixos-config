@@ -2,6 +2,8 @@
   description = "My NixOS flake";
 
   inputs = {
+    unstablepkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     # pkgs-master.url = "github:NixOS/nixpkgs/master";
 
@@ -37,11 +39,11 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.unstablepkgs.follows = "unstablepkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, yazi, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland-plugins, hyprland, yazi, unstablepkgs, ... }@inputs:
   let
     system = "x86_64-linux";
 

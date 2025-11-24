@@ -1,20 +1,20 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   programs.noctalia-shell = {
     enable = true;
     settings = {
       settingsVersion = 23;
-      setupCompleted = false;
+      setupCompleted = true;
       bar = {
         position = "top";
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.25;
         monitors = [ ];
         density = "default";
         showCapsule = true;
-        capsuleOpacity = 1;
-        floating = false;
-        marginVertical = 0.25;
-        marginHorizontal = 0.25;
+        capsuleOpacity = 0.6;
+        floating = true;
+        marginVertical = 0.38;
+        marginHorizontal = 0.38;
         outerCorners = true;
         exclusive = true;
         widgets = {
@@ -57,6 +57,9 @@
               id = "Brightness";
             }
             {
+              id = "DarkMode";
+            }
+            {
               id = "Clock";
             }
           ];
@@ -64,7 +67,7 @@
       };
       general = {
         avatarImage = "";
-        dimmerOpacity = 0.6;
+        dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
         scaleRatio = 1;
@@ -87,12 +90,12 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         tooltipsEnabled = true;
-        panelBackgroundOpacity = 1;
+        panelBackgroundOpacity = 0.7;
         panelsAttachedToBar = true;
         settingsPanelAttachToBar = false;
       };
       location = {
-        name = "Tokyo";
+        name = "Zhejiang";
         weatherEnabled = true;
         weatherShowEffects = true;
         useFahrenheit = false;
@@ -117,11 +120,11 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = "";
+        directory = "~/Pictures/wallpaper";
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
-        setWallpaperOnAllMonitors = true;
-        defaultWallpaper = "";
+        setWallpaperOnAllMonitors = false;
+        defaultWallpaper = ["wallhaven-k8xoxm.png" "landscape.jpg"];
         fillMode = "crop";
         fillColor = "#000000";
         randomEnabled = false;
@@ -129,7 +132,7 @@
         transitionDuration = 1500;
         transitionType = "random";
         transitionEdgeSmoothness = 0.05;
-        monitors = [ ];
+        monitors = ["eDP-2" "HDMI-A-1"];
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
         useWallhaven = false;
@@ -222,7 +225,7 @@
         criticalColor = "";
       };
       dock = {
-        enabled = true;
+        enabled = false;
         displayMode = "always_visible";
         backgroundOpacity = 1;
         radiusRatio = 0.1;
@@ -301,12 +304,12 @@
       brightness = {
         brightnessStep = 5;
         enforceMinimum = true;
-        enableDdcSupport = false;
+        enableDdcSupport = true;
       };
       colorSchemes = {
         useWallpaperColors = false;
-        predefinedScheme = "Noctalia (default)";
-        darkMode = true;
+        predefinedScheme = "Rosepine";
+        darkMode = false;
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
@@ -314,8 +317,8 @@
         generateTemplatesForPredefined = true;
       };
       templates = {
-        gtk = false;
-        qt = false;
+        gtk = true;
+        qt = true;
         kcolorscheme = false;
         alacritty = false;
         kitty = false;
