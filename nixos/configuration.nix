@@ -103,6 +103,14 @@
 
   services.upower.enable = true;
 
+  # xdg.portal = {
+  #   enable = true;
+  #   xdgOpenUsePortal = true;
+  #   extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+  #   wlr.enable = true;
+
+  # };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.huanghunr = {
     isNormalUser = true;

@@ -13,6 +13,7 @@
     ./modules/zellij.nix
     ./modules/Noctalia
     ./modules/gtk.nix
+    ./modules/xdg.nix
   ];
 
   # DPI and Xresources
@@ -25,13 +26,15 @@
     netease-cloud-music-gtk
     vscode
     tree
-    qq
     wechat
     microsoft-edge
     p7zip
     unrar
     anyrun
     nwg-look #gtk theme switcher
+    qq
+    xdg-utils
+    xorg.libX11
   ];
 
   # git
