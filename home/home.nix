@@ -12,6 +12,7 @@
     ./modules/yazi.nix
     ./modules/zellij.nix
     ./modules/Noctalia
+    ./modules/gtk.nix
   ];
 
   # DPI and Xresources
@@ -30,7 +31,7 @@
     p7zip
     unrar
     anyrun
-    nwg-look
+    nwg-look #gtk theme switcher
   ];
 
   # git

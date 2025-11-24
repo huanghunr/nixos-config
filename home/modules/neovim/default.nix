@@ -21,7 +21,7 @@ in
 {
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink configPath;
   # Disable catppuccin to avoid conflict with my non-nix config.
-  catppuccin.nvim.enable = false;
+  # catppuccin.nvim.enable = false;
 
   home.shellAliases = shellAliases;
   programs.nushell.shellAliases = shellAliases;
