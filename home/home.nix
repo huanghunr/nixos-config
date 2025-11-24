@@ -13,7 +13,6 @@
     ./modules/zellij.nix
     ./modules/Noctalia
     ./modules/gtk.nix
-    ./modules/xdg.nix
   ];
 
   # DPI and Xresources
@@ -35,6 +34,7 @@
     qq
     xdg-utils
     xorg.libX11
+    qcm
   ];
 
   # git
