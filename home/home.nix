@@ -35,6 +35,7 @@
     qcm
     mpv
     qqmusic
+    typora
   ];
 
   # git
