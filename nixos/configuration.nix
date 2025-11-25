@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib,... }:
 
 {
   #hardware
@@ -128,6 +128,12 @@
     fish.enable = true;
   };
 
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
   # hyprland
   programs.hyprland = {
     enable = true;
@@ -150,6 +156,36 @@
     pkgs.btop
     pkgs.intel-gpu-tools
     pkgs.kitty
+    pkgs.xorg.libXrandr
+    pkgs.xorg.libXrender
+    pkgs.xorg.libXi
+    pkgs.xorg.libXcursor
+    pkgs.xdg-utils
+    pkgs.xorg.libX11
+    pkgs.xorg.libxcb
+    pkgs.libdrm
+    pkgs.libGL
+    pkgs.krb5
+    (pkgs.symlinkJoin {
+      name = "qq-with-libs";
+      paths = [ pkgs.qq ]; # 如果你的包名是别的，比如 pkgs.qq-latest，就改成那个
+
+      buildInputs = [ pkgs.makeWrapper ];
+
+      postBuild = ''
+        wrapProgram $out/bin/qq \
+          --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath [
+            pkgs.xorg.libX11
+            pkgs.xorg.libxcb
+            pkgs.libGL
+            pkgs.libdrm
+            pkgs.xorg.libXrandr
+            pkgs.xorg.libXrender
+            pkgs.xorg.libXi
+            pkgs.xorg.libXcursor
+          ]}"
+      '';
+    })
   ];
 
   qt = {
@@ -158,12 +194,12 @@
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
   environment.variables ={
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
     http_proxy = "127.0.0.1:7897";
     https_proxy = "127.0.0.1:7897";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   # envs to be preserved when using sudo

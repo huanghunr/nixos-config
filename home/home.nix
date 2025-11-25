@@ -31,10 +31,9 @@
     unrar
     anyrun
     nwg-look #gtk theme switcher
-    qq
-    xdg-utils
-    xorg.libX11
+    # qq
     qcm
+    mpv
   ];
 
   # git

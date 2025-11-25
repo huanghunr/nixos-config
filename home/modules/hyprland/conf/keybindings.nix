@@ -14,6 +14,7 @@
         "SUPER, I, exec, $codeEditor"
         "SUPER, F, togglefloating,"
         "SUPER, E, exec, $menu"
+        "SUPER, F1, exec, $restartClash"
         "SUPER, P, pseudo, # dwindle"
         "SUPER, J, togglesplit, # dwindle"
         "SUPER, B, exec, $browser"

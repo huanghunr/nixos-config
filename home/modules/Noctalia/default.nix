@@ -124,7 +124,7 @@
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
         setWallpaperOnAllMonitors = false;
-        defaultWallpaper = ["wallhaven-k8xoxm.png" "landscape.jpg"];
+        defaultWallpaper = "~/Pictures/wallpaper/wallhaven-k8xoxm.png";
         fillMode = "crop";
         fillColor = "#000000";
         randomEnabled = false;
@@ -132,7 +132,7 @@
         transitionDuration = 1500;
         transitionType = "random";
         transitionEdgeSmoothness = 0.05;
-        monitors = ["eDP-2" "HDMI-A-1"];
+        monitors = [];
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
         useWallhaven = false;

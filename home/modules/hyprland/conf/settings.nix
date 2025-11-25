@@ -13,6 +13,7 @@
       "$lockScreen" = "noctalia-shell ipc call lockScreen lock";
       "$clipboardManager" = "noctalia-shell ipc call launcher clipboard";
       "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
+      "$restartClash" = "pkill clash-verge || true && clash-verge";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -53,6 +54,10 @@
       misc = {
         focus_on_activate = false;
         disable_hyprland_logo = true;
+      };
+
+      xwayland = {
+        force_zero_scaling = true;
       };
 
       decoration = {
@@ -127,6 +132,8 @@
         kb_options = "";
         kb_rules = "";
 
+        accel_profile = "flat";
+
         follow_mouse = 1;
         mouse_refocus = false;
 
@@ -146,8 +153,8 @@
       };
 
       monitor = [
-        "eDP-1 ,2560x1600@240, 0x0, 1.25"
-        "HDMI-A-3, 3840x2160@60, -2560x0, 1.5"
+        "eDP-2 ,2560x1600@240, 0x0, 1.25"
+        "HDMI-A-1, 3840x2160@60, -2560x0, 1.5"
       ];
     };
   };

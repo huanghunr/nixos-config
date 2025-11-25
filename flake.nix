@@ -38,7 +38,7 @@
   let
     system = "x86_64-linux";
 
-      overlays = with inputs; [
+    overlays = with inputs; [
       (final: prev: {
         zjstatus = zjstatus.packages.${prev.system}.default;
       })
