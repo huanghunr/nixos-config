@@ -34,6 +34,7 @@
     # qq
     qcm
     mpv
+    qqmusic
   ];
 
   # git
