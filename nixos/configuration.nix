@@ -168,6 +168,8 @@
     pkgs.libGL
     pkgs.krb5
     pkgs.qq
+    pkgs.kitty
+    pkgs.wl-clipboard
   ];
 
   qt = {
