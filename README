@@ -1,0 +1,1 @@
+journalctl -u home-manager-huanghunr.service -e -n 100

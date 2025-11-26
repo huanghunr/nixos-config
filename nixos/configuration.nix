@@ -50,6 +50,8 @@
        fcitx5-rime             # alternatively, kdePackages.fcitx5-qt
        fcitx5-chinese-addons  # table input method support
        fcitx5-nord            # a color theme
+       fcitx5-mozc
+       fcitx5-gtk
      ];
    };
 
@@ -155,7 +157,6 @@
     pkgs.lshw
     pkgs.btop
     pkgs.intel-gpu-tools
-    pkgs.kitty
     pkgs.xorg.libXrandr
     pkgs.xorg.libXrender
     pkgs.xorg.libXi
@@ -166,26 +167,7 @@
     pkgs.libdrm
     pkgs.libGL
     pkgs.krb5
-    (pkgs.symlinkJoin {
-      name = "qq-with-libs";
-      paths = [ pkgs.qq ]; # 如果你的包名是别的，比如 pkgs.qq-latest，就改成那个
-
-      buildInputs = [ pkgs.makeWrapper ];
-
-      postBuild = ''
-        wrapProgram $out/bin/qq \
-          --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath [
-            pkgs.xorg.libX11
-            pkgs.xorg.libxcb
-            pkgs.libGL
-            pkgs.libdrm
-            pkgs.xorg.libXrandr
-            pkgs.xorg.libXrender
-            pkgs.xorg.libXi
-            pkgs.xorg.libXcursor
-          ]}"
-      '';
-    })
+    pkgs.qq
   ];
 
   qt = {

@@ -124,7 +124,7 @@
         enableMultiMonitorDirectories = false;
         recursiveSearch = false;
         setWallpaperOnAllMonitors = false;
-        defaultWallpaper = "~/Pictures/wallpaper/wallhaven-k8xoxm.png";
+        defaultWallpaper = "/home/huanghunr/Pictures/wallpaper/landscape.jpg";
         fillMode = "crop";
         fillColor = "#000000";
         randomEnabled = false;

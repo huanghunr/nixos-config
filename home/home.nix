@@ -13,6 +13,7 @@
     ./modules/zellij.nix
     ./modules/Noctalia
     ./modules/gtk.nix
+    ./modules/kitty
   ];
 
   # DPI and Xresources
@@ -36,6 +37,7 @@
     mpv
     qqmusic
     typora
+    thunderbird
   ];
 
   # git
