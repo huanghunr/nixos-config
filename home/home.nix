@@ -38,6 +38,7 @@
     qqmusic
     typora
     thunderbird
+    baidupcs-go
   ];
 
   # git
