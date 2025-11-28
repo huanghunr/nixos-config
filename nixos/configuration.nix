@@ -12,7 +12,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.hostName = "nixos"; # hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -107,6 +107,15 @@
 
   services.upower.enable = true;
 
+  services.supergfxd.enable = true;
+
+  services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+  };
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -172,6 +181,7 @@
     pkgs.qq
     pkgs.kitty
     pkgs.wl-clipboard
+    pkgs.asus-wmi-screenpad-ctl
   ];
 
   qt = {

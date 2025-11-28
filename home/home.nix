@@ -39,6 +39,7 @@
     typora
     thunderbird
     baidupcs-go
+    speedtest-cli
   ];
 
   # git

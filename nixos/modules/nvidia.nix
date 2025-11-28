@@ -6,13 +6,14 @@
     enable = true;
   };
 
-   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-   hardware.nvidia.prime = {
-      offload = {
-      enable = true;
-      enableOffloadCmd = true;
-		};
+  hardware.nvidia.prime = {
+    #   offload = {
+    #   enable = true;
+    #   enableOffloadCmd = true;
+		# };
+    sync.enable = true;
     # 注意：如果核显是 Intel，应使用 intelBusId 而非 amdgpuBusId
     # 0:2:0 通常是 Intel iGPU 的地址
     intelBusId = "PCI:0:2:0";
