@@ -14,6 +14,7 @@
     ./modules/Noctalia
     ./modules/gtk.nix
     ./modules/kitty
+    ./modules/xdg.nix
   ];
 
   # DPI and Xresources
