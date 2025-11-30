@@ -24,7 +24,7 @@
 
   home.packages = with pkgs; [
     netease-cloud-music-gtk
-    vscode
+    vscode-fhs
     tree
     wechat
     microsoft-edge

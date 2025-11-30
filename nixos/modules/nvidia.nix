@@ -33,15 +33,19 @@
   hardware.nvidia.open = false;
   hardware.nvidia.nvidiaSettings = true;
 
+  hardware.acpilight.enable = true;
+
   #If you encounter the problem of booting to text mode you might try adding the Nvidia kernel module manually with this
   #boot.initrd.kernelModules = [ "nvidia" ];
   #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   #disable nouveau
-  boot.kernelParams = [ "modprobe.blacklist=nouveau" ];
+  boot.kernelParams = [ 
+    "modprobe.blacklist=nouveau" 
+    "acpi_backlight=video"  
+  ];
 
-   #Screen Tearing Issues
-   hardware.nvidia.forceFullCompositionPipeline = true;
-
+  #Screen Tearing Issues
+  hardware.nvidia.forceFullCompositionPipeline = true;
 
 }

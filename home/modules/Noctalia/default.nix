@@ -273,10 +273,10 @@
       };
       notifications = {
         enabled = true;
-        monitors = [ ];
+        monitors = [ "eDP-2" ];
         location = "top_right";
         overlayLayer = true;
-        backgroundOpacity = 0.4;
+        backgroundOpacity = 0.7;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
