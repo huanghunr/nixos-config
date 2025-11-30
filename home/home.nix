@@ -32,7 +32,6 @@
     unrar
     anyrun
     nwg-look #gtk theme switcher
-    # qq
     qcm
     mpv
     qqmusic
