@@ -33,20 +33,21 @@
     unrar
     anyrun
     nwg-look #gtk theme switcher
-    qcm
+    # qcm
     mpv
     qqmusic
     typora
     thunderbird
     baidupcs-go
     speedtest-cli
+    xorg.xwininfo
   ];
 
   # git
-  programs.git = {
-    enable = true;
-    userName = "huanghunr";
-    userEmail = "huanghunr@outlook.com";
+  programs.git.enable = true;
+  programs.git.settings.user = {
+    name = "huanghunr";
+    email = "huanghunr@outlook.com";
   };
 
   # starship

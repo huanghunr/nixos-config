@@ -50,7 +50,7 @@
      enable = true;
      fcitx5.addons = with pkgs; [
        fcitx5-rime             # alternatively, kdePackages.fcitx5-qt
-       fcitx5-chinese-addons  # table input method support
+       qt6Packages.fcitx5-chinese-addons  # table input method support
        fcitx5-nord            # a color theme
        fcitx5-mozc
        fcitx5-gtk
@@ -67,7 +67,6 @@
     nerd-fonts.iosevka
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-    noto-fonts-emoji
    ];
 
   # SDDM
@@ -101,7 +100,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;
 
