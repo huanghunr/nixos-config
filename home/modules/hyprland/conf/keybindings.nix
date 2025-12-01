@@ -12,6 +12,7 @@
         "SUPER, G, exec, $controlCenter"
         "SUPER, T, exec, $settingsManager"
         "SUPER, I, exec, $codeEditor"
+        "SUPER, N, exec, $restartNoctalia"
         "SUPER, F, togglefloating,"
         "SUPER, E, exec, $menu"
         "SUPER, F1, exec, $restartClash"

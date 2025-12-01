@@ -41,6 +41,7 @@
     baidupcs-go
     speedtest-cli
     xorg.xwininfo
+    hmcl
   ];
 
   # git

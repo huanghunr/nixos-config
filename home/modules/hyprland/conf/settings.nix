@@ -14,6 +14,7 @@
       "$clipboardManager" = "noctalia-shell ipc call launcher clipboard";
       "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
       "$restartClash" = "pkill clash-verge || true && clash-verge";
+      "$restartNoctalia" = "pkill noctalia-shell || true && noctalia-shell &";
 
       env = [
         "XCURSOR_SIZE,24"

@@ -46,7 +46,7 @@
 
   in {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      stdenv.hostPlatform.system = system;
+      inherit system;
       specialArgs = { inherit inputs; };
 
       modules = [
