@@ -11,7 +11,7 @@
         bold_italic_font = "auto";
         mouse_hide_wait = 2;
         cursor_shape = "beam";
-        cursor_trail = 0.5;
+        cursor_trail = 0;
         url_color = "#0087bd";
         url_style = "dotted";
         #Close the terminal =  without confirmation;
