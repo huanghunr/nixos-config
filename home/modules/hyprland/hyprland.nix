@@ -34,5 +34,12 @@ in
 
     foot
 
+    hyprshot
+
+    grim
+
+    slurp
+
+    gradia
   ];
 }

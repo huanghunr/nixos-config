@@ -39,16 +39,15 @@
           ];
           right = [
             {
-              id = "ScreenRecorder";
-            }
-            {
+              colorizeIcons =  false;
+              drawerEnabled = false;
               id = "Tray";
             }
             {
-              id = "NotificationHistory";
+              id = "ScreenRecorder";
             }
             {
-              id = "Battery";
+              id = "NotificationHistory";
             }
             {
               id = "Volume";
@@ -60,6 +59,15 @@
               id = "DarkMode";
             }
             {
+              id = "wifi";
+            }
+            {
+              displayMode = "alwaysshow";
+              id = "Battery";
+            }
+            {
+              formatHorizontal = "HH:mm ddd, MMM dd";
+              formatVertical = "HH mm - dd MM";
               id = "Clock";
             }
           ];

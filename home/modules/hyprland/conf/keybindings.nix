@@ -13,6 +13,9 @@
         "SUPER, T, exec, $settingsManager"
         "SUPER, I, exec, $codeEditor"
         "SUPER, N, exec, $restartNoctalia"
+        "SUPER SHIFT, F, exec, $screenshotFast"
+        "SUPER SHIFT, C, exec, $screenshotToclipboard"
+        "SUPER SHIFT, E, exec, $screenshotEdit"
         "SUPER, F, togglefloating,"
         "SUPER, E, exec, $menu"
         "SUPER, F1, exec, $restartClash"
@@ -71,8 +74,10 @@
     ];
 
     windowrule = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        # "move 0 0,match:class flameshot, match:title flameshot"
+        # "pin yes,match:class flameshot, match:title flameshot"
+        # "match:fullscreen_state_client 2,match:class flameshot, match:title flameshot"
+        # "float yes,match:class flameshot, match:title flameshot"
     ];
   };
 } 

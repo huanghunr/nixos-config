@@ -7,6 +7,7 @@
       ./hardware-configuration.nix
       ./modules/nvidia.nix
       ./modules/bluetooth.nix
+      ./modules/nix-ld.nix
     ];
 
   # Bootloader.
@@ -195,6 +196,7 @@
     XMODIFIERS = "@im=fcitx";
     http_proxy = "127.0.0.1:7897";
     https_proxy = "127.0.0.1:7897";
+    HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
   };
 
   # envs to be preserved when using sudo

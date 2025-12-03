@@ -15,14 +15,13 @@
       "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
       "$restartClash" = "pkill clash-verge || true && clash-verge";
       "$restartNoctalia" = "pkill noctalia-shell || true && noctalia-shell &";
+      "$screenshotToclipboard" = "hyprshot -m output --clipboard-only";
+      "$screenshotEdit" = "gradia --screenshot";
+      "$screenshotFast" = "hyprshot -m region";
 
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-      ];
-
-      windowrule = [
-        "pseudo, class:^(fcitx)$"
       ];
 
       general = {
