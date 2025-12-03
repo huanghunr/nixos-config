@@ -182,6 +182,8 @@
     pkgs.kitty
     pkgs.wl-clipboard
     pkgs.asus-wmi-screenpad-ctl
+    pkgs.nix-index
+    pkgs.libxcb-cursor
   ];
 
   qt = {
