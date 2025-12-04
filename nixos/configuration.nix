@@ -199,6 +199,7 @@
     http_proxy = "127.0.0.1:7897";
     https_proxy = "127.0.0.1:7897";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
+    QT_QPA_PLATFORM="wayland";
   };
 
   # envs to be preserved when using sudo

@@ -15,6 +15,7 @@
     ./modules/gtk.nix
     ./modules/kitty
     ./modules/xdg.nix
+    ./modules/dev
   ];
 
   # DPI and Xresources

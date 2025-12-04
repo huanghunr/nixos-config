@@ -32,6 +32,11 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.unstablepkgs.follows = "unstablepkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland-plugins, hyprland, ... }@inputs:
