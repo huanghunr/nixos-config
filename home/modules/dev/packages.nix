@@ -161,5 +161,8 @@
       ++ [
         jadx # decompile android .apk to java source code
       ]
+      ++[
+        devenv
+      ]
     );
 }
