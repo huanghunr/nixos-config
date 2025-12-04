@@ -1,4 +1,10 @@
-{ config, lib, pkgs, modulesPath, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 {
 
   # Enable OpenGL
@@ -12,14 +18,14 @@
     #   offload = {
     #   enable = true;
     #   enableOffloadCmd = true;
-		# };
+    # };
     sync.enable = true;
     intelBusId = "PCI:0:2:0";
-		nvidiaBusId = "PCI:1:0:0";
-	};
-  
+    nvidiaBusId = "PCI:1:0:0";
+  };
+
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.deviceSection = ''
     Option "DRI" "2"
     Option "TearFree" "true"
@@ -38,9 +44,9 @@
   #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   #disable nouveau
-  boot.kernelParams = [ 
-    "modprobe.blacklist=nouveau" 
-    "acpi_backlight=video"  
+  boot.kernelParams = [
+    "modprobe.blacklist=nouveau"
+    "acpi_backlight=video"
   ];
 
   #Screen Tearing Issues

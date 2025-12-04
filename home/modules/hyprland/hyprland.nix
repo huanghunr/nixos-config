@@ -17,7 +17,7 @@ in
   };
   services.polkit-gnome.enable = true; # polkit
 
-    # 常用 Wayland 组件与工具
+  # 常用 Wayland 组件与工具
   home.packages = with pkgs; [
     # Bar & 通知 & 启动器
     waybar
@@ -27,7 +27,7 @@ in
 
     # 多媒体创作
     obs-studio
-    
+
     playerctl
 
     brightnessctl

@@ -1,14 +1,19 @@
-{ config, pkgs, inputs, lib,... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   #hardware
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/nvidia.nix
-      ./modules/bluetooth.nix
-      ./modules/nix-ld.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/nvidia.nix
+    ./modules/bluetooth.nix
+    ./modules/nix-ld.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -31,7 +36,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
+  i18n.supportedLocales = [
+    "zh_CN.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+  ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "zh_CN.UTF-8";
@@ -46,19 +54,19 @@
   };
 
   # Simplified Chinese:
-   i18n.inputMethod = {
-     type = "fcitx5";
-     enable = true;
-     fcitx5.addons = with pkgs; [
-       fcitx5-rime             # alternatively, kdePackages.fcitx5-qt
-       qt6Packages.fcitx5-chinese-addons  # table input method support
-       fcitx5-nord            # a color theme
-       fcitx5-mozc
-       fcitx5-gtk
-     ];
-   };
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime # alternatively, kdePackages.fcitx5-qt
+      qt6Packages.fcitx5-chinese-addons # table input method support
+      fcitx5-nord # a color theme
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
 
-   fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [
     adwaita-fonts
     material-design-icons
     noto-fonts-color-emoji
@@ -68,7 +76,7 @@
     nerd-fonts.iosevka
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-   ];
+  ];
 
   # SDDM
   services.xserver.enable = true;
@@ -127,7 +135,10 @@
   users.users.huanghunr = {
     isNormalUser = true;
     description = "huanghunr";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -142,9 +153,9 @@
   };
 
   programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   # hyprland
@@ -154,12 +165,17 @@
     xwayland.enable = true; # Xwayland can be disabled.
   };
 
+  programs.direnv.enable = true;
+
   # defult shell to fish
   users.users.huanghunr.shell = pkgs.fish;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.systemPackages = [
     pkgs.git
@@ -193,13 +209,13 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
-  environment.variables ={
+  environment.variables = {
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
     http_proxy = "127.0.0.1:7897";
     https_proxy = "127.0.0.1:7897";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
-    QT_QPA_PLATFORM="wayland";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   # envs to be preserved when using sudo

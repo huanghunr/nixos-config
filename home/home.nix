@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # user info
@@ -33,7 +38,7 @@
     p7zip
     unrar
     anyrun
-    nwg-look #gtk theme switcher
+    nwg-look # gtk theme switcher
     # qcm
     mpv
     qqmusic

@@ -37,47 +37,61 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = { self, nixpkgs, home-manager, hyprland-plugins, hyprland, ... }@inputs:
-  let
-    system = "x86_64-linux";
-
-    overlays = with inputs; [
-      (final: prev: {
-        zjstatus = zjstatus.packages.${prev.system}.default;
-      })
-    ];
-
-  in {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
-
-      modules = [
-        ./nixos/configuration.nix
-
-        home-manager.nixosModules.home-manager
-
-        hyprland.nixosModules.default
-
-        inputs.noctalia.nixosModules.default
-
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-
-          home-manager.users.huanghunr = {
-            imports = [
-              ./home/home.nix
-              inputs.noctalia.homeModules.default
-            ];
-          };
-          
-          home-manager.extraSpecialArgs = {inherit inputs;};
-        }
-      ];
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      hyprland-plugins,
+      hyprland,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+
+      overlays = with inputs; [
+        (final: prev: {
+          zjstatus = zjstatus.packages.${prev.system}.default;
+        })
+      ];
+
+    in
+    {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs system; };
+
+        modules = [
+          ./nixos/configuration.nix
+
+          home-manager.nixosModules.home-manager
+
+          hyprland.nixosModules.default
+
+          inputs.noctalia.nixosModules.default
+
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+
+            home-manager.users.huanghunr = {
+              imports = [
+                ./home/home.nix
+                inputs.noctalia.homeModules.default
+              ];
+            };
+
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      };
+    };
 }

@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   programs.noctalia-shell = {
     enable = true;
@@ -39,7 +44,7 @@
           ];
           right = [
             {
-              colorizeIcons =  false;
+              colorizeIcons = false;
               drawerEnabled = false;
               id = "Tray";
             }
@@ -140,7 +145,7 @@
         transitionDuration = 1500;
         transitionType = "random";
         transitionEdgeSmoothness = 0.05;
-        monitors = [];
+        monitors = [ ];
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
         useWallhaven = false;
