@@ -13,6 +13,7 @@
     ./modules/nvidia.nix
     ./modules/bluetooth.nix
     ./modules/nix-ld.nix
+    ./modules/nixRuntime.nix
   ];
 
   # Bootloader.
@@ -76,6 +77,8 @@
     nerd-fonts.iosevka
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
+    wqy_microhei
+    wqy_zenhei
   ];
 
   # SDDM
@@ -153,12 +156,6 @@
 
   programs.fish = {
     enable = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
   # hyprland

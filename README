@@ -1,2 +1,3 @@
 journalctl -u home-manager-huanghunr.service -e -n 100
 fish 的别名最好不要和现有的冲突
+electron ./squashfs-root/resources/app.asar --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
