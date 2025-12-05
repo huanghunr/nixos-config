@@ -1,1 +1,2 @@
 journalctl -u home-manager-huanghunr.service -e -n 100
+fish 的别名最好不要和现有的冲突

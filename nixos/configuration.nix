@@ -151,6 +151,10 @@
     uwsm.enable = true;
   };
 
+  programs.fish = {
+    enable = true;
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -211,9 +215,6 @@
   environment.variables = {
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
-    # http_proxy = "http://127.0.0.1:7897";
-    # https_proxy = "https://127.0.0.1:7897";
-    # all_proxy=  "http://127.0.0.1:7897";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
     QT_QPA_PLATFORM = "wayland";
   };
