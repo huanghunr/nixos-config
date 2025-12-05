@@ -22,6 +22,7 @@
     ./modules/xdg.nix
     ./modules/dev
     ./modules/ssh.nix
+    ./modules/fish.nix
   ];
 
   # DPI and Xresources
@@ -62,7 +63,7 @@
       };
     };
     signing = {
-      key = "ssh-ed25519 AAAAAAAAAAAA...AA username@hostname";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnvM7OU9mKdg2SCjSyEsj2IVjxzCtUiBBf8i47cS7NZ huanghunr@outlook.com";
       signByDefault = true;
     };
   };

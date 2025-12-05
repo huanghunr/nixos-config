@@ -24,7 +24,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
+  networking.proxy.default = "http://127.0.0.1:7897/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
@@ -149,7 +149,6 @@
     firefox.enable = true;
     clash-verge.enable = true;
     uwsm.enable = true;
-    fish.enable = true;
   };
 
   programs.steam = {
@@ -212,9 +211,9 @@
   environment.variables = {
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
-    http_proxy = "http://127.0.0.1:7897";
-    https_proxy = "https://127.0.0.1:7897";
-    all_proxy=  "http://127.0.0.1:7897";
+    # http_proxy = "http://127.0.0.1:7897";
+    # https_proxy = "https://127.0.0.1:7897";
+    # all_proxy=  "http://127.0.0.1:7897";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
     QT_QPA_PLATFORM = "wayland";
   };
