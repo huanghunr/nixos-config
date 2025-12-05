@@ -21,6 +21,7 @@
     ./modules/kitty
     ./modules/xdg.nix
     ./modules/dev
+    ./modules/ssh.nix
   ];
 
   # DPI and Xresources
@@ -51,10 +52,19 @@
   ];
 
   # git
-  programs.git.enable = true;
-  programs.git.settings.user = {
-    name = "huanghunr";
-    email = "huanghunr@outlook.com";
+  programs.git = {
+    enable = true;
+    settings = {
+      user.name = "huanghunr";
+      user.email = "huanghunr@outlook.com";
+      gpg = {
+        format = "ssh";
+      };
+    };
+    signing = {
+      key = "ssh-ed25519 AAAAAAAAAAAA...AA username@hostname";
+      signByDefault = true;
+    };
   };
 
   # starship
