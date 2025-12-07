@@ -42,6 +42,7 @@
       url = "github:thiagokokada/nix-alien";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    my-local-nur.url = "path:/home/huanghunr/code/Projects/YesPlayMusic";
   };
 
   outputs =
@@ -69,6 +70,16 @@
         specialArgs = { inherit inputs system; };
 
         modules = [
+          (
+            { pkgs, ... }:
+            {
+              environment.systemPackages = [
+                # 直接从 inputs 中取出包并安装
+                inputs.my-local-nur.packages.${pkgs.system}.yesplaymusic
+              ];
+            }
+          )
+
           ./nixos/configuration.nix
 
           home-manager.nixosModules.home-manager
