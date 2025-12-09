@@ -25,6 +25,8 @@
     ./modules/fish.nix
     ./modules/vscode.nix
     ./modules/Applications
+
+    ./script
   ];
 
   # DPI and Xresources

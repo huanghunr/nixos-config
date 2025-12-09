@@ -1,6 +1,6 @@
-{ pkgs, stdenv,...}:
+{ pkgs,...}:
 
-stdenv.mkDerivation {
+pkgs.stdenv.mkDerivation {
   pname = "clipboard_sync";
   version = "1.0.0";
 

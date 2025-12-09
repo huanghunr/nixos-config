@@ -1,6 +1,9 @@
-{...}:
+{pkgs,...}:
+let
+  clipboard_sync = pkgs.callPackage ./clipboard_sync.nix {};
+in
 {
-  imports = [
-    ./clipboard_sync.nix
+  home.packages = [
+    clipboard_sync
   ];
 }
