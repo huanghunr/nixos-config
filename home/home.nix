@@ -41,7 +41,6 @@
     unrar
     anyrun
     nwg-look # gtk theme switcher
-    # qcm
     mpv
     qqmusic
     typora

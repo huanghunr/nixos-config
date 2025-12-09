@@ -1,6 +1,6 @@
 {
-  pkgsconfig,
   pkgs,
+  config,
   inputs,
   ...
 }:
