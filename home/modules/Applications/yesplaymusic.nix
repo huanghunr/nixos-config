@@ -35,7 +35,7 @@ in
   };
 
   config = lib.mkIf config.programs.yesplaymusic.enable {
-    xdg.desktopEntries.ida = {
+    xdg.desktopEntries.yesplaymusic = {
       exec = "electron ${binaryPath} --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime ";
       terminal = false;
       inherit name genericName icon categories mimeType;
