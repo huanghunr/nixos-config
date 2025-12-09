@@ -46,7 +46,7 @@
   #disable nouveau
   boot.kernelParams = [
     "modprobe.blacklist=nouveau"
-    "acpi_backlight=video"
+    # "acpi_backlight=video"
   ];
 
   #Screen Tearing Issues

@@ -34,6 +34,8 @@
   };
   programs.local-ida.enable = true;
 
+  programs.yesplaymusic.enable = true;
+
   home.packages = with pkgs; [
     netease-cloud-music-gtk
     tree
