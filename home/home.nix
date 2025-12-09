@@ -23,6 +23,7 @@
     ./modules/dev
     ./modules/ssh.nix
     ./modules/fish.nix
+    ./modules/vscode.nix
   ];
 
   # DPI and Xresources
@@ -33,7 +34,6 @@
 
   home.packages = with pkgs; [
     netease-cloud-music-gtk
-    vscode-fhs
     tree
     wechat
     microsoft-edge

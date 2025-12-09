@@ -64,7 +64,7 @@
               id = "DarkMode";
             }
             {
-              id = "Wifi";
+              id = "WiFi";
             }
             {
               displayMode = "alwaysshow";
