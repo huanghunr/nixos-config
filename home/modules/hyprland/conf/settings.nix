@@ -22,6 +22,7 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1"
       ];
 
       general = {
@@ -144,8 +145,8 @@
           clickfinger_behavior = true;
           disable_while_typing = true;
 
-          tap-to-click = false;
-          tap-and-drag = false;
+          tap-to-click = true;
+          tap-and-drag = true;
         };
 
         force_no_accel = 0;
@@ -153,8 +154,8 @@
       };
 
       monitor = [
-        "eDP-1 ,2560x1600@240, 0x0, 1.25"
-        "HDMI-A-3, 3840x2160@60, -2560x0, 1.5"
+        "eDP-2 ,2560x1600@240, 0x0, 1.25"
+        "HDMI-A-1, 3840x2160@60, -2560x0, 1.5"
       ];
     };
   };

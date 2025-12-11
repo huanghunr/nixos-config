@@ -42,6 +42,10 @@
       url = "github:thiagokokada/nix-alien";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+      hyprgrass = {
+         url = "github:horriblename/hyprgrass";
+         inputs.hyprland.follows = "hyprland"; # IMPORTANT
+      };
   };
 
   outputs =

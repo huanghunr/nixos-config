@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 let
@@ -14,6 +15,12 @@ in
     systemd = {
       enable = true;
     };
+    plugins = [
+      inputs.hyprgrass.packages.${pkgs.system}.default
+
+      # optional integration with pulse-audio, see examples/hyprgrass-pulse/README.md
+      inputs.hyprgrass.packages.${pkgs.system}.hyprgrass-pulse
+   ];
   };
   services.polkit-gnome.enable = true; # polkit
 

@@ -112,7 +112,10 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  services.libinput = {
+    enable = true;
+    touchpad.tapping = true;
+  };
 
   services.power-profiles-daemon.enable = true;
 
