@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -21,7 +20,7 @@ let
     "application/octet-stream"
   ];
 
-  # 检测文件是否存在
+  # check if the binary exists
   hasBinary = builtins.pathExists binaryPath;
 
 in

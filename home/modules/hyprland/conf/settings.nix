@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -22,7 +22,7 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1"
+        # "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1"
       ];
 
       general = {

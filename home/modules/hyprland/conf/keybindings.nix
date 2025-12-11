@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
@@ -16,6 +16,7 @@
       "SUPER SHIFT, F, exec, $screenshotFast"
       "SUPER SHIFT, C, exec, $screenshotToclipboard"
       "SUPER SHIFT, E, exec, $screenshotEdit"
+      "SUPER, Y, exec, yazi"
       "SUPER, F, togglefloating,"
       "SUPER, E, exec, $menu"
       "SUPER, F1, exec, $restartClash"

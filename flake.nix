@@ -39,7 +39,7 @@
     };
       hyprgrass = {
          url = "github:horriblename/hyprgrass";
-         inputs.hyprland.follows = "hyprland"; # IMPORTANT
+         inputs.hyprland.follows = "hyprland";
       };
   };
 
@@ -54,13 +54,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-
-      overlays = with inputs; [
-        (final: prev: {
-          zjstatus = zjstatus.packages.${prev.system}.default;
-        })
-      ];
-
     in
     {
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {

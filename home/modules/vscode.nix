@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  inherit (pkgs) vscode-utils;
+  # inherit (pkgs) vscode-utils;
   # nix-env-selector = vscode-utils.extensionFromVscodeMarketplace {
   #   name = "nix-env-selector";
   #   publisher = "arrterian";
@@ -18,7 +18,7 @@ in
   programs.vscode = {
     enable = true;
     package = pkgs.vscode.fhs;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
+    # profiles.default.extensions = with pkgs.vscode-extensions; [
       # yzhang.markdown-all-in-one
       # ms-python.vscode-pylance
       # ms-python.python
@@ -30,6 +30,6 @@ in
       # github.copilot
       # github.copilot-chat
       # vscode-css-peek
-    ];
+    # ];
   };
 }
