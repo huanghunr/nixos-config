@@ -18,6 +18,7 @@
       "$screenshotToclipboard" = "hyprshot -m output --clipboard-only";
       "$screenshotEdit" = "gradia --screenshot";
       "$screenshotFast" = "hyprshot -m region";
+      "$desktopManager" = "noctalia-shell &";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -73,8 +74,10 @@
         };
 
         active_opacity = 1.0;
-        inactive_opacity = 0.9;
+        inactive_opacity = 1.0;
         fullscreen_opacity = 1.0;
+        dim_inactive = true;
+        dim_strength = 0.1;
 
         blur = {
           enabled = true;
@@ -185,12 +188,16 @@
         numlock_by_default = 1;
       };
       windowrule = [
-        "match:class gimp, no_blur on"
+        "match:class gimp, no_blur on, no_dim on"
         "opacity 0.8, match:class code"
-        "match:class QQ, float yes, size 1440 900 , center on"
-        "match:class wechat, float yes, size 1440 920, center on"
-        "match:class microsoft-edge, float yes, size 1905 1185, center on"
-        "match:class com.hex-rays.ida, no_blur on, float yes, center on"
+        "match:class QQ, float yes, max_size 1595 979 , center on"
+        "match:class wechat, float yes, max_size 1595 979"
+        "match:class microsoft-edge, float yes, max_size 1905 1185, center on"
+        "match:class com.hex-rays.ida, no_blur on, float yes"
+        "match:float on, match:workspace m[0], max_size 1906 1185 "
+        "match:float on, match:workspace m[1], max_size 2034 1229 "
+        "match:class yesplaymusic, opacity 0.8"
+        "match:class jetbrains-studio, opacity 0.8"
       ];
 
       monitor = [

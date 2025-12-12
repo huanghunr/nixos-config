@@ -16,6 +16,7 @@
       "SUPER SHIFT, F, exec, $screenshotFast"
       "SUPER SHIFT, C, exec, $screenshotToclipboard"
       "SUPER SHIFT, E, exec, $screenshotEdit"
+      "SUPER, L, exec, $desktopManager"
       "SUPER, Y, exec, yazi"
       "SUPER, F, togglefloating,"
       "SUPER, E, exec, $menu"
