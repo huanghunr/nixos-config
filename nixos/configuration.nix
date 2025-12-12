@@ -141,6 +141,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "adbusers"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -166,6 +167,8 @@
   };
 
   programs.direnv.enable = true;
+
+  programs.adb.enable = true;
 
   # defult shell to fish
   users.users.huanghunr.shell = pkgs.fish;

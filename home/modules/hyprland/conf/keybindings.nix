@@ -73,12 +73,5 @@
       ", XF86AudioPlay, exec, playerctl play-pause"
       ", XF86AudioPrev, exec, playerctl previous"
     ];
-
-    windowrule = [
-      # "move 0 0,match:class flameshot, match:title flameshot"
-      # "pin yes,match:class flameshot, match:title flameshot"
-      # "match:fullscreen_state_client 2,match:class flameshot, match:title flameshot"
-      # "float yes,match:class flameshot, match:title flameshot"
-    ];
   };
 }

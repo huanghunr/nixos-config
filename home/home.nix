@@ -10,7 +10,6 @@
 
   imports = [
     ./modules/neovim
-    ./modules/dev/packages.nix
     ./modules/hyprland
     ./modules/yazi.nix
     ./modules/zellij.nix
@@ -53,6 +52,7 @@
     speedtest-cli
     xorg.xwininfo
     hmcl
+    gimp-with-plugins
   ];
 
   # git

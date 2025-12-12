@@ -184,6 +184,14 @@
         force_no_accel = 0;
         numlock_by_default = 1;
       };
+      windowrule = [
+        "match:class gimp, no_blur on"
+        "opacity 0.8, match:class code"
+        "match:class QQ, float yes, size 1440 900 , center on"
+        "match:class wechat, float yes, size 1440 920, center on"
+        "match:class microsoft-edge, float yes, size 1905 1185, center on"
+        "match:class com.hex-rays.ida, no_blur on, float yes, center on"
+      ];
 
       monitor = [
         "eDP-2 ,2560x1600@240, 0x0, 1.25"
