@@ -53,6 +53,7 @@
     xorg.xwininfo
     hmcl
     gimp-with-plugins
+    duckdb
   ];
 
   # git

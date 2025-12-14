@@ -27,7 +27,7 @@ let
   hasBinary = builtins.pathExists binaryPath;
 
   idaPythonEnv = pkgs.python3.withPackages (ps: with ps; [
-    yara-python 
+    yara-python
     debugpy
     tornado
     keystone-engine 
