@@ -1,5 +1,7 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
+  programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -20,35 +22,47 @@
         ];
     };
   };
-  environment.systemPackages = with pkgs; [
-
-    electron
-
-    (appimage-run.override {
-      extraPkgs =
-        pkgs: with pkgs; [
-          nss
-          nspr
-          xorg.libxshmfence
-          xorg.libX11
-          xorg.libXcomposite
-          xorg.libXdamage
-          xorg.libXext
-          xorg.libXfixes
-          xorg.libXrandr
-          xorg.libxcb
-          xorg.libxkbfile
-          alsa-lib
-          mesa
-          gtk3
-          gdk-pixbuf
-          cairo
-          pango
-          at-spi2-atk
-          cups
-          libdrm
-          libxkbcommon
-        ];
-    })
-  ];
+  environment.systemPackages =
+    with pkgs;
+    (
+      # AppImage support
+      [
+        electron
+        (appimage-run.override {
+          extraPkgs =
+            pkgs: with pkgs; [
+              nss
+              nspr
+              xorg.libxshmfence
+              xorg.libX11
+              xorg.libXcomposite
+              xorg.libXdamage
+              xorg.libXext
+              xorg.libXfixes
+              xorg.libXrandr
+              xorg.libxcb
+              xorg.libxkbfile
+              alsa-lib
+              mesa
+              gtk3
+              gdk-pixbuf
+              cairo
+              pango
+              at-spi2-atk
+              cups
+              libdrm
+              libxkbcommon
+            ];
+        })
+      ]
+      ++
+      # game support
+      [
+        (heroic.override {
+          extraPkgs = pkgs: [
+            pkgs.gamemode
+          ];
+        })
+      ]
+    );
 }

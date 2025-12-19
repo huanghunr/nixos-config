@@ -142,6 +142,7 @@
       "networkmanager"
       "wheel"
       "adbusers"
+      "kvm"
     ];
     packages = with pkgs; [
       kdePackages.kate
