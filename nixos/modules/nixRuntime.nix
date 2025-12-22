@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs,  ... }:
 {
   programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
 
   programs.steam = {
     enable = true;
@@ -61,6 +62,7 @@
         (heroic.override {
           extraPkgs = pkgs: [
             pkgs.gamemode
+            pkgs.gamescope
           ];
         })
       ]

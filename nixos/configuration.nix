@@ -11,6 +11,7 @@
     ./modules/bluetooth.nix
     ./modules/nix-ld.nix
     ./modules/nixRuntime.nix
+    ./ssh.nix
   ];
 
   # Bootloader.
@@ -30,7 +31,7 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
-  time.hardwareClockInLocalTime = true;
+  time.hardwareClockInLocalTime = false;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -90,7 +91,11 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
+  # services.mihomo= {
+  #   enable = true;
+  #   tunMode = true;
+  # };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -152,7 +157,10 @@
   # Install programs.
   programs = {
     firefox.enable = true;
-    clash-verge.enable = true;
+    clash-verge={
+      enable = true;
+      tunMode = true;
+    };
     uwsm.enable = true;
   };
 
@@ -220,6 +228,13 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
+  services.avahi = {
+  enable = true;
+  nssmdns4 = true;
+  openFirewall = true;
+};
+
+
   # envs to be preserved when using sudo
   security.sudo.extraConfig = ''
     Defaults env_keep += "http_proxy https_proxy"
@@ -234,9 +249,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

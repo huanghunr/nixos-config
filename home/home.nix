@@ -54,6 +54,7 @@
     hmcl
     gimp-with-plugins
     duckdb
+    libreoffice-qt
   ];
 
   # git
