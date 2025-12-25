@@ -145,7 +145,7 @@
         monitors = [ ];
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
-        useWallhaven = false;
+        useWallhaven = true;
         wallhavenQuery = "";
         wallhavenSorting = "relevance";
         wallhavenOrder = "desc";
@@ -235,16 +235,19 @@
         criticalColor = "";
       };
       dock = {
-        enabled = false;
-        displayMode = "always_visible";
-        backgroundOpacity = 1;
-        radiusRatio = 0.1;
+        enabled = true;
+        displayMode = "auto_hide";
+        backgroundOpacity = 0.5;
         floatingRatio = 1;
-        size = 1;
+        size = 0.8;
         onlySameOutput = true;
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
+        pinnedStatic = false;
+        inactiveIndicators = false;
+        deadOpacity = 0.6;
+        animationSpeed = 1;
       };
       network = {
         wifiEnabled = true;
@@ -340,9 +343,11 @@
         pywalfox = false;
         vicinae = false;
         walker = false;
-        code = false;
+        code = true;
         spicetify = false;
         enableUserTemplates = false;
+        hyprland = true;
+        yazi = true;
       };
       nightLight = {
         enabled = false;
@@ -360,6 +365,12 @@
         enabled = false;
         wallpaperChange = "";
         darkModeChange = "";
+      };
+      desktopWidgets = {
+        enabled = false;
+        editMode = false;
+        gridSnap = false;
+        monitorWidgets = [ ];
       };
     };
   };

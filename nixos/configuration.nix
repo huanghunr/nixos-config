@@ -11,7 +11,7 @@
     ./modules/bluetooth.nix
     ./modules/nix-ld.nix
     ./modules/nixRuntime.nix
-    ./ssh.nix
+    ./modules/ssh.nix
   ];
 
   # Bootloader.
@@ -91,7 +91,7 @@
   };
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
   # services.mihomo= {
   #   enable = true;
   #   tunMode = true;
