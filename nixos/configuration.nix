@@ -13,6 +13,7 @@
     ./modules/nixRuntime.nix
     ./modules/ssh.nix
     ./modules/secrets.nix
+    ./modules/frp.nix
   ];
 
   # Bootloader.
