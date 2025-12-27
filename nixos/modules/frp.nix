@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, lib, ... }:
+let
+  cfg = config.modules.my-frp;
+in
 {
+  options.modules.my-frp = {
+    enable = lib.mkEnableOption "Enable my custom FRP client setup";
+  };
 
+  config = lib.mkIf cfg.enable{
   sops.secrets.frp_token = {};
 
   sops.secrets.frp_server_ip = {};
@@ -39,5 +45,6 @@
     };
   };
 
-  systemd.services.frpc.serviceConfig.EnvironmentFile = config.sops.templates."frp-env".path;
+  systemd.services.frp.serviceConfig.EnvironmentFile = config.sops.templates."frp-env".path;
+  };
 }

@@ -16,6 +16,8 @@
     ./modules/frp.nix
   ];
 
+  modules.my-frp.enable = false;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
