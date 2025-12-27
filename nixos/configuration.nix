@@ -12,6 +12,7 @@
     ./modules/nix-ld.nix
     ./modules/nixRuntime.nix
     ./modules/ssh.nix
+    ./modules/secrets.nix
   ];
 
   # Bootloader.

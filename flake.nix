@@ -37,10 +37,14 @@
       url = "github:thiagokokada/nix-alien";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-      hyprgrass = {
-         url = "github:horriblename/hyprgrass";
-         inputs.hyprland.follows = "hyprland";
-      };
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -69,6 +73,8 @@
           hyprland.nixosModules.default
 
           inputs.noctalia.nixosModules.default
+
+          inputs.sops-nix.nixosModules.sops
 
           {
             home-manager.useGlobalPkgs = true;

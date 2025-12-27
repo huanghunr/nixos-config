@@ -55,6 +55,7 @@
     gimp-with-plugins
     duckdb
     libreoffice-qt
+    sops
   ];
 
   # git
