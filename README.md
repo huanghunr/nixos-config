@@ -14,3 +14,4 @@ fish 的别名最好不要和现有的冲突
 android-studio avd 启动参数 `export QT_QPA_PLATFORM=xcb /home/huanghunr/Android/Sdk/emulator/emulator -avd Pixel_6 -netdelay none -netspeed full -gpu swiftshader_indirect`
 
 `nix flake lock --update-input <name>` 用于更新单个软件包
+`export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'` Java 字体渲染

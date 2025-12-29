@@ -23,6 +23,8 @@
     ./modules/vscode.nix
     ./modules/Applications
 
+    ./modules/Applications/securityTools
+
     ./script
   ];
 

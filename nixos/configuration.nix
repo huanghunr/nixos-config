@@ -230,6 +230,7 @@
     XMODIFIERS = "@im=fcitx";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
     QT_QPA_PLATFORM = "wayland";
+    _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
   };
 
   services.avahi = {
