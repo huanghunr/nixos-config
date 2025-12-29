@@ -1,6 +1,6 @@
 {...}:
 {
   imports =[
-    ./ghidra.nix
+    ./packages.nix
   ];
 }
