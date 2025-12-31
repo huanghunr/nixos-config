@@ -58,6 +58,7 @@
     duckdb
     libreoffice-qt
     sops
+    motrix
   ];
 
   # git
