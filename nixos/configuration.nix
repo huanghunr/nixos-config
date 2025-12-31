@@ -15,6 +15,7 @@
     ./modules/secrets.nix
     ./modules/frp.nix
     ./modules/docker.nix
+    ./modules/virtualbox.nix
   ];
 
   modules.my-frp.enable = false;
@@ -153,6 +154,7 @@
       "wheel"
       "adbusers"
       "kvm"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate
