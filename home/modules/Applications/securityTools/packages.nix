@@ -1,4 +1,4 @@
-{pkgs,...}:
+{pkgs,inputs,...}:
 {
   home.packages = with pkgs; [
     (ghidra.withExtensions (p: with p; [
@@ -13,5 +13,8 @@
   ++
   [
     binwalk
+  ]
+  ++[
+    inputs.pwndbg.packages.${pkgs.system}.default
   ];
 }

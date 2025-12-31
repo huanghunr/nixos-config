@@ -14,6 +14,7 @@
     ./modules/ssh.nix
     ./modules/secrets.nix
     ./modules/frp.nix
+    ./modules/docker.nix
   ];
 
   modules.my-frp.enable = false;

@@ -15,6 +15,7 @@
         showCapsule = true;
         capsuleOpacity = 0.6;
         floating = true;
+        useSeparateOpacity = true;
         marginVertical = 0.38;
         marginHorizontal = 0.38;
         outerCorners = true;
