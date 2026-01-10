@@ -155,6 +155,7 @@
       "adbusers"
       "kvm"
       "docker"
+      "libvirtd"
     ];
     packages = with pkgs; [
       kdePackages.kate

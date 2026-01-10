@@ -59,6 +59,8 @@
     libreoffice-qt
     sops
     motrix
+    wemeet
+    file
   ];
 
   # git

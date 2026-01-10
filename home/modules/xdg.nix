@@ -5,7 +5,7 @@
     desktopEntries = {
       typora = {
         name = "typora";
-        exec = "typora --enable-features=UseOzonePlatform --ozone-platform=wayland";
+        exec = "typora --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime";
         terminal = false;
       };
       android-studio-xcb-launcher = {
