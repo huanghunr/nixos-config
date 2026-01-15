@@ -108,6 +108,7 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -140,13 +141,6 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    # extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
-    wlr.enable = true;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.huanghunr = {
     isNormalUser = true;
@@ -163,6 +157,8 @@
       kdePackages.kate
     ];
   };
+  
+  programs.dconf.enable = true;
 
   # Install programs.
   programs = {
@@ -234,6 +230,8 @@
   environment.variables = {
     EDITOR = "vim";
     XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULES="wayland;fcitx";
+    QT_IM_MODULE="fcitx";
     HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
     QT_QPA_PLATFORM = "wayland";
     _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";

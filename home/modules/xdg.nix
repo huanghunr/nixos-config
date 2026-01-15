@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   xdg = {
     enable = true;
@@ -15,5 +15,28 @@
         icon = "";
       };
     };
+    portal = {
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal ];
+      # config = {
+      #   common = {
+      #     default = [ "gtk" ];
+      #     "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+      #   };
+      #   hyprland = {
+      #     default = [ "hyprland" "gtk" ];
+      #     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      #     "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+      #   };
+      # };
+    };
+    # mimeApps = {
+    #   defaultApplications = {
+    #     "text/html" = [ "com.microsoft.Edge.desktop" ];
+    #     "x-scheme-handler/http"  = [ "firefox.desktop" ];
+    #     "x-scheme-handler/https" = [ "com.microsoft.Edge.desktop" ];
+    #   };
+    # };
   };
+
 }

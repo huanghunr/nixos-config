@@ -21,14 +21,12 @@ in
       # optional integration with pulse-audio, see examples/hyprgrass-pulse/README.md
       inputs.hyprgrass.packages.${pkgs.system}.hyprgrass-pulse
    ];
+    portalPackage = null;
   };
   services.polkit-gnome.enable = true; # polkit
-
+  
   # 常用 Wayland 组件与工具
   home.packages = with pkgs; [
-    # Bar & 通知 & 启动器
-    waybar
-
     # 终端与文件管理
     kitty
 
