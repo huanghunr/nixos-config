@@ -14,7 +14,7 @@
     ./modules/ssh.nix
     ./modules/secrets.nix
     ./modules/frp.nix
-    ./modules/docker.nix
+    ./modules/podman.nix
     ./modules/virtualbox.nix
   ];
 
@@ -150,7 +150,6 @@
       "wheel"
       "adbusers"
       "kvm"
-      "docker"
       "libvirtd"
     ];
     packages = with pkgs; [

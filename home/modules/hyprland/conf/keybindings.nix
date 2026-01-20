@@ -57,6 +57,7 @@
     bindm = [
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
+      "SUPER, ALT_L, resizewindow"
     ];
 
     bindel = [
