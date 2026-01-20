@@ -1,4 +1,4 @@
-{ ... }:
+{pkgs, ... }:
 {
   virtualisation = {
     containers.enable = true;
@@ -14,4 +14,5 @@
       "podman"
     ];
   };
+  environment.systemPackages = [ pkgs.distrobox ];
 }
