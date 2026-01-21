@@ -21,6 +21,10 @@
     shellAliases = {
       ll = "ls -la";
       cl = "clear";
+      dls = "distrobox ls";
+      den = "distrobox enter";
+      dst = "distrobox stop";
+      dstr = "distrobox";
     };
 
     functions = {

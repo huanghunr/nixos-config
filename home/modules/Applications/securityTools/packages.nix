@@ -16,5 +16,8 @@
   ]
   ++[
     inputs.pwndbg.packages.${pkgs.system}.default
+  ]
+  ++[
+    pwntools
   ];
 }
