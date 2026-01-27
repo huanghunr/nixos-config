@@ -19,5 +19,6 @@
   ]
   ++[
     pwntools
+    ropgadget
   ];
 }
