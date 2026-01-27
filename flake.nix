@@ -48,6 +48,10 @@
     pwndbg = {
       url = "github:pwndbg/pwndbg";
     };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -78,6 +82,8 @@
           inputs.noctalia.nixosModules.default
 
           inputs.sops-nix.nixosModules.sops
+
+          inputs.nix-flatpak.nixosModules.nix-flatpak
 
           {
             home-manager.useGlobalPkgs = true;
