@@ -16,6 +16,7 @@
     ./modules/frp.nix
     ./modules/podman.nix
     ./modules/virtualbox.nix
+    ./modules/flatpak.nix
   ];
 
   modules.my-frp.enable = false;
