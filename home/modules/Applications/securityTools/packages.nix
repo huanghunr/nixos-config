@@ -13,6 +13,7 @@
   ++
   [
     binwalk
+    upx
   ]
   ++[
     inputs.pwndbg.packages.${pkgs.system}.default
