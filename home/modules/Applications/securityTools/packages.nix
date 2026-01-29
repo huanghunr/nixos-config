@@ -14,6 +14,8 @@
   [
     binwalk
     upx
+    cyberchef
+    imhex
   ]
   ++[
     inputs.pwndbg.packages.${pkgs.system}.default
