@@ -61,6 +61,7 @@
     motrix
     wemeet
     file
+    rustdesk
   ];
 
   # git
