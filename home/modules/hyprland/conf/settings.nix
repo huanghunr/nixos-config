@@ -193,13 +193,12 @@
         "match:class QQ, float yes, max_size 1595 979"
         "match:class wechat, float yes, max_size 1595 979"
         "match:class microsoft-edge, float yes, max_size 1905 1185, center on"
-        "match:class com.hex-rays.ida, no_blur on, float yes"
+        "match:class com.hex-rays.ida, no_blur on, float yes, no_initial_focus on"
         "match:float on, match:workspace m[0], max_size 1906 1185 "
         "match:float on, match:workspace m[1], max_size 2034 1229 "
-        "match:class yesplaymusic, opacity 0.8"
+        "match:class yesplaymusic, opacity 0.8, float yes, center on,size 1320 880"
         "match:class jetbrains-studio, opacity 0.8"
-        "match:class wemeetapp, float yes"
-        "match:class wemeetapp, no_initial_focus on"
+        "match:class wemeetapp, float yes, no_initial_focus on"
       ];
 
       monitor = [
