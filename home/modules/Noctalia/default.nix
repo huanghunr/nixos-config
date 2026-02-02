@@ -2,8 +2,13 @@
   ...
 }:
 {
+  imports =[
+    ./plugins.nix
+  ];
+
   programs.noctalia-shell = {
     enable = true;
+
     settings = {
       settingsVersion = 23;
       setupCompleted = true;
@@ -45,6 +50,12 @@
               colorizeIcons = false;
               drawerEnabled = false;
               id = "Tray";
+            }
+            {
+              id = "plugin:notes-scratchpad";
+            }
+            {
+              id = "plugin:clipper";
             }
             {
               id = "ScreenRecorder";

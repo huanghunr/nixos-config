@@ -11,7 +11,7 @@
       "$controlCenter" = "noctalia-shell ipc call controlCenter toggle";
       "$settingsManager" = "noctalia-shell ipc call settings toggle";
       "$lockScreen" = "noctalia-shell ipc call lockScreen lock";
-      "$clipboardManager" = "noctalia-shell ipc call launcher clipboard";
+      "$clipboardManager" = "noctalia-shell ipc call plugin:clipper openPanel";
       "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
       "$restartClash" = "pkill clash-verge || true && clash-verge";
       "$restartNoctalia" = "pkill .quickshell-wra || true && noctalia-shell &";

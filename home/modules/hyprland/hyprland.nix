@@ -45,5 +45,7 @@ in
     slurp
 
     gradia
+
+    cliphist
   ];
 }
