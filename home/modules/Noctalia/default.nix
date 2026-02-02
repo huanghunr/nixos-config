@@ -358,7 +358,7 @@
         code = true;
         spicetify = false;
         enableUserTemplates = false;
-        hyprland = true;
+        hyprland = false;
         yazi = true;
         btop = true;
       };

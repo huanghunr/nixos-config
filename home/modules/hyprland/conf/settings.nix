@@ -3,6 +3,7 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
+      source = "~/.config/hypr/noctalia/noctalia-colors.conf";
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "noctalia-shell ipc call launcher toggle";
@@ -34,8 +35,8 @@
         gaps_out = 5;
 
         border_size = 2;
-        "col.active_border" = "0xfff4cccc";
-        "col.inactive_border" = "0xff2f343f";
+        # "col.active_border" = "0xfff4cccc"; # 防止和notcalia主题冲突
+        # "col.inactive_border" = "0xff2f343f";
 
         resize_on_border = false;
         hover_icon_on_border = false;
