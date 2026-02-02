@@ -14,7 +14,7 @@
       "$clipboardManager" = "noctalia-shell ipc call launcher clipboard";
       "$powerMenu" = "noctalia-shell ipc call sessionMenu toggle";
       "$restartClash" = "pkill clash-verge || true && clash-verge";
-      "$restartNoctalia" = "pkill noctalia-shell || true && noctalia-shell &";
+      "$restartNoctalia" = "pkill .quickshell-wra || true && noctalia-shell &";
       "$screenshotToclipboard" = "hyprshot -m output --clipboard-only";
       "$screenshotEdit" = "gradia --screenshot";
       "$screenshotFast" = "hyprshot -m region";
@@ -190,7 +190,7 @@
       windowrule = [
         "match:class gimp, no_blur on, no_dim on"
         "opacity 0.8, match:class code"
-        "match:class QQ, float yes, max_size 1595 979 , center on"
+        "match:class QQ, float yes, max_size 1595 979"
         "match:class wechat, float yes, max_size 1595 979"
         "match:class microsoft-edge, float yes, max_size 1905 1185, center on"
         "match:class com.hex-rays.ida, no_blur on, float yes"

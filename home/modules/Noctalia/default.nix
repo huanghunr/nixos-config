@@ -349,6 +349,7 @@
         enableUserTemplates = false;
         hyprland = true;
         yazi = true;
+        btop = true;
       };
       nightLight = {
         enabled = false;

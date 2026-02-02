@@ -2,7 +2,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "SUPER, Return, exec, $terminal"
+      "SUPER_SHIFT, Return, exec, $terminal"
+      "SUPER, Return, exec, [float on;size 2048,1280;] $terminal"
       "SUPER, C, killactive,"
       "SUPER, M, exit,"
       "SUPER, Escape, exec, $powerMenu"
