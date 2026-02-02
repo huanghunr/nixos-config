@@ -16,6 +16,7 @@
     upx
     cyberchef
     imhex
+    socat
   ]
   ++[
     inputs.pwndbg.packages.${pkgs.system}.default

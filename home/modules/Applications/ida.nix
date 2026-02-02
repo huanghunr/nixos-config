@@ -74,7 +74,13 @@ let
         qt6.qtwayland
       ]);
 
-    # 这里的 toString 是为了确保路径被作为字符串处理，而不是被 Nix Store 捕获
+    profile = ''
+      export PYTHONHOME="${idaPythonEnv}"
+      export PYTHONPATH="${idaPythonEnv}/${idaPythonEnv.sitePackages}"
+      export LD_LIBRARY_PATH="${idaPythonEnv}/lib:$LD_LIBRARY_PATH"
+    '';
+
+    # runScript = "bash";
     runScript = "${toString binaryPath}";
   };
 
