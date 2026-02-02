@@ -22,6 +22,7 @@
     ./modules/fish.nix
     ./modules/vscode.nix
     ./modules/Applications
+    ./modules/AI
 
     ./modules/Applications/securityTools
 
