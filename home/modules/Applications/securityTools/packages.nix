@@ -24,5 +24,8 @@
   ++[
     pwntools
     ropgadget
+  ]
+  ++[
+    jadx
   ];
 }
