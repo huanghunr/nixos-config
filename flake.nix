@@ -25,7 +25,6 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.unstablepkgs.follows = "unstablepkgs";
     };
 
     nur = {
@@ -50,16 +49,13 @@
     };
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
-      hyprland-plugins,
       hyprland,
       ...
     }@inputs:

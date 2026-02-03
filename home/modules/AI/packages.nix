@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  unstable = inputs.unstablepkgs.legacyPackages.${pkgs.system};
+in
 {
-  home.packages = with pkgs; [
-    opencode
+  home.packages = [
+    unstable.opencode
   ];
 }
