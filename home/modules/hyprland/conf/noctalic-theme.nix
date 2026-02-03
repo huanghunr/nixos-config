@@ -1,5 +1,6 @@
 { ... }:
 {
+  # rose-pine theme colors
   wayland.windowManager.hyprland = {
     settings = {
       "$primary" = "rgb(d7827e)";
@@ -19,7 +20,7 @@
         "col.border_inactive" = "$surface";
         "col.border_locked_active" = "$error";
         "col.border_locked_inactive" = " $surface";
-        
+
         groupbar = {
           "col.active" = "$secondary";
           "col.inactive" = "$surface";
