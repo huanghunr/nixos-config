@@ -199,7 +199,8 @@
         "match:float on, match:workspace m[1], max_size 2034 1229 "
         "match:class yesplaymusic, opacity 0.8, float yes, center on,size 1320 880"
         "match:class jetbrains-studio, opacity 0.8"
-        "match:class wemeetapp, float yes, no_initial_focus on"
+        "match:class imhex, float yes, center on, size 1280 720"
+        "match:class xdg-desktop-portal-gtk, match:title ^(Open Files|Open Folder|Save File)$, float yes, center on, size 1280 820"
       ];
 
       monitor = [

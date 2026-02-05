@@ -90,12 +90,8 @@
           ))
 
           #-- rust
-          # we'd better use the rust-overlays for rust development
-          # pkgs-master.rustc
-          # pkgs-master.rust-analyzer
-          # pkgs-master.cargo # rust package manager
-          # pkgs-master.rustfmt
-          # pkgs-master.clippy # rust linter
+          rustc
+          cargo
 
           #-- golang
           go
