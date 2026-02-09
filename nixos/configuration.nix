@@ -222,17 +222,17 @@
       pkgs.xdg-utils
       pkgs.xorg.libX11
       pkgs.xorg.libxcb
+      pkgs.xorg.xwininfo
       pkgs.libdrm
       pkgs.libGL
       pkgs.krb5
-      pkgs.qq
       pkgs.kitty
       pkgs.wl-clipboard
       pkgs.asus-wmi-screenpad-ctl
       pkgs.nix-index
       pkgs.libxcb-cursor
     ];
-
+    
     sessionVariables.NIXOS_OZONE_WL = "1";
     sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
