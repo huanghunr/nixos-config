@@ -4,7 +4,6 @@
     enable = true;
 
     packages = [
-      # "com.tencent.wemeet"
     ];
   };
 }

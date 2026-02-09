@@ -27,7 +27,7 @@ in
       serverAddr = "{{ .Envs.FRP_SERVER_IP }}";
       serverPort = 7000; 
 
-      # 鉴权配置
+      # authentication configuration
       auth = {
         method = "token";
         token = "{{ .Envs.FRP_TOKEN }}";

@@ -10,6 +10,8 @@
     nix-alien
   ];
   programs.nix-ld.enable = true;
+  
+  # settings from nixos wiki
   programs.nix-ld.libraries = with pkgs; [
     # List by default
     zlib
