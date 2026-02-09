@@ -1,7 +1,44 @@
 # Nixos-config
-本人使用的nixos配置，用于项目开发，网络安全研究，同时兼具日常使用。
 
-## 目录结构
+本人使用的 NixOS 配置，用于项目开发、网络安全研究，同时兼具日常使用。
+
+## 系统组件
+
+| 组件           | 名称                      |
+| -------------- | ------------------------- |
+| 窗口管理器     | Hyprland                  |
+| 桌面环境       | Noctalia shell            |
+| 终端           | Kitty + fish + starship   |
+| 文本编辑器     | Neovim & vscode           |
+| 颜色主题       | Rose Pine(Noctalia shell) |
+| 字体           | Noto-fonts                |
+| 本地媒体播放器 | mpv                       |
+| 文件管理器     | yazi & dolphin            |
+| 图片预览/编辑  | gradia & gimp             |
+| 输入法         | Fcitx5 + rime             |
+| 截屏 / 录屏    | hyprshot / obs            |
+| 加密           | sops                      |
+| 网络管理器     | NetworkManager            |
+| 系统启动器     | systemd                   |
+
+------
+
+## 注意事项
+
+- 这是偏个人化的配置，仅供参考与学习。
+- 配置里依赖了个人文件与路径，无法保证在他人环境中直接可用。
+- 项目处于逐步完善阶段，可能存在些许问题。
+- 如果你对 Nix/NixOS 还不熟悉，建议先通读[官方文档](https://nix.dev/)。
+
+## 问题与解决方式
+
+更多命令与经验记录见 `tips.md`。
+
+
+## 目录结构总览
+- [NixOS 模块说明](nixos/modules/README.md)
+- [Home Manager 模块说明](home/modules/README.md)
+
 ```
 ./
 ├── flake.nix                      # Flake 入口与依赖定义
