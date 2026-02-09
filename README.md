@@ -117,3 +117,17 @@
 	└── secrets/                   # 机密文件
 		└── secrets.yaml           # SOPS/机密数据
 ```
+
+------
+
+### 效果展示
+
+![image-20260209024238716](imgs/2026-02-09-164227_hyprshot.png)
+
+![image-20260209025252872](imgs/2026-02-09-165243_hyprshot.png)
+
+![image-20260209032024100](imgs/2026-02-09-172016_hyprshot.png)
+
+![](imgs/2026-02-09-172449_hyprshot.png)
+
+壁纸https://wallhaven.cc/w/6dp6el

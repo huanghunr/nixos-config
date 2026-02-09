@@ -25,7 +25,7 @@ Hyprland 桌面环境配置与子模块。
 Kitty 终端模拟器配置。设置了kitty终端主题。
 
 ### neovim/
-Neovim 配置与插件管理。
+Neovim 配置与插件管理。参考文档https://github.com/ryan4yin/nix-config/tree/main/home/base/tui/editors/neovim
 
 ### ssh.nix
 SSH 客户端配置。
