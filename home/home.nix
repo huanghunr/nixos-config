@@ -61,9 +61,12 @@
     file
     rustdesk
     qq
+    kitty
+    obs-studio
   ];
 
   programs = {
+    # local programs
     local-ida.enable = true;
     yesplaymusic.enable = true;
 

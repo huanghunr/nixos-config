@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 let
   # inherit (pkgs) vscode-utils;
   # nix-env-selector = vscode-utils.extensionFromVscodeMarketplace {

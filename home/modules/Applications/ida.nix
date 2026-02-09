@@ -23,7 +23,7 @@ let
     "application/octet-stream"
   ];
 
-  # 检测文件是否存在
+  # check whether the file exists
   hasBinary = builtins.pathExists binaryPath;
 
   idaPythonEnv = pkgs.python3.withPackages (ps: with ps; [
@@ -41,7 +41,6 @@ let
     pycryptodome
   ]);
 
-  # 定义 FHS 环境
   idaFhsEnv = pkgs.buildFHSEnv {
     name = fhsEnvName;
 
