@@ -63,6 +63,7 @@
     qq
     kitty
     obs-studio
+    fastfetch
   ];
 
   programs = {
