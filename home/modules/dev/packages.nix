@@ -91,6 +91,7 @@
           #-- rust
           rustc
           cargo
+          rust-analyzer
 
           #-- golang
           go
