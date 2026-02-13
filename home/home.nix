@@ -64,6 +64,10 @@
     kitty
     obs-studio
     fastfetch
+
+    man
+    man-pages
+    man-pages-posix
   ];
 
   programs = {
