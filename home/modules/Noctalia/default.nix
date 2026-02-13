@@ -155,7 +155,7 @@
         transitionType = "random";
         transitionEdgeSmoothness = 0.05;
         monitors = [ ];
-        panelPosition = "follow_bar";
+        panelPosition = "center";
         hideWallpaperFilenames = false;
         useWallhaven = true;
         wallhavenQuery = "";
