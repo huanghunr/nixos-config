@@ -107,7 +107,7 @@
         allowPanelsOnScreenWithoutBar = true;
       };
       ui = {
-        fontDefault = "Roboto";
+        fontDefault = "Adwaita Sans";
         fontFixed = "DejaVu Sans Mono";
         fontDefaultScale = 1;
         fontFixedScale = 1;

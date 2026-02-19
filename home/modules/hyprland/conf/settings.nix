@@ -69,7 +69,7 @@
 
         shadow = {
           enabled = true;
-          range = 4;
+          range = 20;
           render_power = 3;
           color = "rgba(1a1a1aee)";
         };
@@ -84,7 +84,7 @@
           enabled = true;
           new_optimizations = false;
           size = 3;
-          passes = 1;
+          passes = 2;
           ignore_opacity = false;
         };
       };

@@ -1,14 +1,17 @@
-{pkgs,...}:{
+{ pkgs, ... }:
+{
+  systemd.services.display-manager.environment = {
+    QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
+  };
 
   environment.systemPackages = [
-    (pkgs.catppuccin-sddm.override
-      {
-        flavor = "macchiato";
-        accent = "rosewater";
-        font = "Noto Sans";
-        fontSize = "9";
-        background = "${../../imgs/wallhaven_wqvwr6.jpg}";
-        loginBackground = false;
+    (pkgs.catppuccin-sddm.override {
+      flavor = "macchiato";
+      accent = "rosewater";
+      font = "Noto Sans";
+      fontSize = "9";
+      background = "${../../imgs/wallhaven_wqvwr6.jpg}";
+      loginBackground = false;
     })
     (pkgs.sddm-astronaut.override {
       embeddedTheme = "hyprland_kath";
@@ -20,10 +23,16 @@
     })
   ];
 
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "sddm-astronaut-theme"; #/run/current-system/sw/share/sddm/themes
-      extraPackages = with pkgs.kdePackages; [ qtmultimedia qtsvg qtvirtualkeyboard];
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    wayland.compositor = "kwin";
+    theme = "sddm-astronaut-theme"; # /run/current-system/sw/share/sddm/themes
+    extraPackages = with pkgs.kdePackages; [
+      qtmultimedia
+      qtsvg
+      qtvirtualkeyboard
+      kirigami
+    ];
   };
 }

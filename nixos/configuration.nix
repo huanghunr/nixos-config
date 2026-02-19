@@ -173,9 +173,6 @@
       "libvirtd"
     ];
     shell = pkgs.fish; # defult shell to fish
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
   };
 
   programs = {
@@ -231,10 +228,14 @@
       pkgs.asus-wmi-screenpad-ctl
       pkgs.nix-index
       pkgs.libxcb-cursor
+
+      pkgs.kdePackages.qqc2-breeze-style
+      pkgs.kdePackages.qqc2-desktop-style
+      pkgs.kdePackages.kirigami
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
-    sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
+    sessionVariables.QT_QUICK_CONTROLS_STYLE="org.kde.desktop";
 
     variables = {
       EDITOR = "vim";
@@ -242,7 +243,7 @@
       QT_IM_MODULES = "wayland;fcitx";
       QT_IM_MODULE = "fcitx";
       HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
-      QT_QPA_PLATFORM = "wayland";
+      reboot_QPA_PLATFORM = "wayland";
       _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
     };
   };
@@ -250,7 +251,7 @@
   qt = {
     enable = true;
     platformTheme = "qt5ct";
-    style = "kvantum";
+    style = "breeze";
   };
 
   system.stateVersion = "25.05";
