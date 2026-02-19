@@ -107,7 +107,7 @@
     };
 
     displayManager.sddm.enable = true; # SDDM
-    desktopManager.plasma6.enable = true; # if use Plasma desktop
+    desktopManager.plasma6.enable = false; # if use Plasma desktop
 
     printing.enable = true; # Enable CUPS to print documents.
 
