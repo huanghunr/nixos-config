@@ -235,7 +235,7 @@
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
-    sessionVariables.QT_QUICK_CONTROLS_STYLE="org.kde.desktop";
+    # sessionVariables.QT_QUICK_CONTROLS_STYLE="org.kde.desktop";
 
     variables = {
       EDITOR = "vim";

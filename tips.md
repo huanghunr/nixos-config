@@ -52,3 +52,12 @@ fish 的别名最好不要和现有的冲突
 
 ### kde
 由于最开始使用的是kde的桌面，现在转到hyprland，需要关闭desktopManager.plasma6.enable，并且手动配置xdg。
+
+### 蓝牙 Failed to set power on: org.bluez.Error.Failed
+```
+rfkill block bluetooth
+rfkill unblock bluetooth
+```
+
+### qml或qcc元素偏扁
+设置QT_QUICK_CONTROLS_STYLE = "org.kde.desktop"环境变量，安装对应kdeyy依赖。
