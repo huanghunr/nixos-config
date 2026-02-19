@@ -72,7 +72,7 @@
   ];
 
   programs = {
-    noctalia-shell.systemd.enable = true;
+    # noctalia-shell.systemd.enable = true; # there is a bug that will start the service again after the screen lock is completed
     # local programs
     local-ida.enable = true;
     yesplaymusic.enable = true;

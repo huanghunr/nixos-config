@@ -12,7 +12,7 @@ in
     inherit package;
     enable = true;
     systemd = {
-      enable = true;
+      enable = false; #Warning: If you use the Home Manager module, make sure to disable systemd integration, as it conflicts with UWSM.
     };
     plugins = [
       inputs.hyprgrass.packages.${pkgs.system}.default
