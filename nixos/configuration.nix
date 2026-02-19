@@ -16,6 +16,7 @@
     ./modules/podman.nix
     ./modules/virtualbox.nix
     ./modules/flatpak.nix
+    ./modules/sddm.nix
   ];
 
   modules = {
