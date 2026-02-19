@@ -72,6 +72,7 @@
   ];
 
   programs = {
+    noctalia-shell.systemd.enable = true;
     # local programs
     local-ida.enable = true;
     yesplaymusic.enable = true;

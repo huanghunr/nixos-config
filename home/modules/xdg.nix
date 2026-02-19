@@ -57,6 +57,13 @@ in
       };
     };
 
+    autostart = {
+      enable = true;
+      entries = [
+        
+      ];
+    };
+
     mimeApps = {
       enable = true;
       defaultApplications = {
