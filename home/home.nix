@@ -68,6 +68,7 @@
     man
     man-pages
     man-pages-posix
+    brave
   ];
 
   programs = {
