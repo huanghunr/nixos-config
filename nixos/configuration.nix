@@ -250,6 +250,7 @@
   qt = {
     enable = true;
     platformTheme = "qt5ct";
+    style = "kvantum";
   };
 
   system.stateVersion = "25.05";
