@@ -106,7 +106,6 @@
       };
     };
 
-    displayManager.sddm.enable = true; # SDDM
     desktopManager.plasma6.enable = false; # if use Plasma desktop
 
     printing.enable = true; # Enable CUPS to print documents.
@@ -232,7 +231,7 @@
       pkgs.nix-index
       pkgs.libxcb-cursor
     ];
-    
+
     sessionVariables.NIXOS_OZONE_WL = "1";
     sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
