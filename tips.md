@@ -49,3 +49,6 @@ fish 的别名最好不要和现有的冲突
 ### java
 
 `export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'` Java 字体渲染
+
+### kde
+由于最开始使用的是kde的桌面，现在转到hyprland，需要关闭desktopManager.plasma6.enable，并且手动配置xdg。
