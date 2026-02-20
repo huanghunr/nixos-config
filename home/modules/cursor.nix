@@ -19,12 +19,11 @@
       };
     in
     getFrom "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice.tar.xz"
-      "sha256-BvVE9qupMjw7JRqFUj1J0a4ys6kc9fOLBPx2bGaapTk="
+      "sha256-SG/NQd3K9DHNr9o4m49LJH+UC/a1eROUjrAQDSn3TAU="
       "Bibata-Modern-Ice";
-      
+
   # DPI and Xresources
   xresources.properties = {
-    "Xcursor.size" = 16;
     "Xft.dpi" = 172;
   };
 }
