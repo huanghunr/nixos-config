@@ -25,15 +25,10 @@
     ./modules/ssh.nix
     ./modules/fish.nix
     ./modules/vscode.nix
+    ./modules/cursor.nix
 
     ./script
   ];
-
-  # DPI and Xresources
-  xresources.properties = {
-    "Xcursor.size" = 16;
-    "Xft.dpi" = 172;
-  };
 
   home.packages = with pkgs; [
     netease-cloud-music-gtk
