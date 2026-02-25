@@ -41,14 +41,17 @@
 
 ```
 ./
+├── flake.lock                     # Flake 锁文件
 ├── flake.nix                      # Flake 入口与依赖定义
-├── format.py                      # 辅助格式化脚本
+├── format-hyprland.py             # Hyprland 配置辅助格式化脚本
 ├── fromat-yazi.py                 # Yazi 相关格式化脚本
+├── LICENSE                        # 开源许可证
 ├── README.md                      # 项目说明
 ├── tips.md                        # 使用/维护小贴士
 ├── home/                          # Home Manager 配置
 │   ├── home.nix                   # Home Manager 主入口
 │   └── modules/                   # Home Manager 模块集合
+│       ├── cursor.nix             # 鼠标指针与 DPI/Xresources 配置
 │       ├── fish.nix               # fish 配置
 │       ├── gtk.nix                # GTK 主题/外观
 │       ├── ssh.nix                # SSH 客户端配置
@@ -62,6 +65,7 @@
 │       ├── Applications/          # 应用与工具集合
 │       │   ├── default.nix        # 应用模块入口
 │       │   ├── ida.nix            # IDA 相关配置
+│       │   ├── tabby.nix          # Tabby 终端打包配置
 │       │   ├── yesplaymusic.nix   # YesPlayMusic 配置
 │       │   └── securityTools/     # 安全工具集合
 │       │       ├── default.nix    # 安全工具入口
@@ -91,14 +95,13 @@
 │       │       └── lua/           # Lua 配置与插件
 │       ├── Noctalia/              # Noctalia 主题/配置
 │       │   ├── default.nix        # Noctalia 模块入口
-│       │   ├── plugins.nix        # 主题插件
-│       │   └── test.json          # 测试/示例数据
-│       └── script/                # Home 相关脚本
-│           ├── android-studio-xcb-launcher.nix # Android Studio 启动器
-│           ├── android-studio-xcb-launcher.sh  # 启动脚本
-│           ├── clipboard_sync.nix # 剪贴板同步服务
-│           ├── clipboard_sync.sh  # 剪贴板同步脚本,用于解决QQ复制粘贴问题。
-│           └── default.nix        # 脚本模块入口
+│       │   └── plugins.nix        # 主题插件
+│   └── script/                    # Home 相关脚本
+│       ├── android-studio-xcb-launcher.nix # Android Studio 启动器
+│       ├── android-studio-xcb-launcher.sh  # 启动脚本
+│       ├── clipboard_sync.nix     # 剪贴板同步服务
+│       ├── clipboard_sync.sh      # 剪贴板同步脚本,用于解决QQ复制粘贴问题。
+│       └── default.nix            # 脚本模块入口
 └── nixos/                         # NixOS 系统级配置
 	├── configuration.nix          # 系统主配置入口
 	├── hardware-configuration.nix # 硬件配置
@@ -111,6 +114,7 @@
 	│   ├── nixRuntime.nix         # Nix 运行时相关
 	│   ├── nvidia.nix             # NVIDIA 驱动
 	│   ├── podman.nix             # Podman
+	│   ├── sddm.nix               # SDDM 显示管理器
 	│   ├── secrets.nix            # 机密加载入口
 	│   ├── ssh.nix                # SSH 服务
 	│   └── virtualbox.nix         # VirtualBox

@@ -37,3 +37,5 @@ appimageTools.wrapType2 {
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
   };
 }
+
+# temporary construction of tabby terminal official construction has been put on the agenda see https://github.com/NixOS/nixpkgs/pull/439818

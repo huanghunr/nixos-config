@@ -24,6 +24,9 @@ NVIDIA 驱动与图形相关配置。
 ### podman.nix
 Podman 容器运行时配置。和distrobox一起，用于为pwn创建ubuntu环境。
 
+### sddm.nix
+SDDM 显示管理器与登录主题相关配置。
+
 ### secrets.nix
 机密加载入口（如 SOPS/密钥等）。
 
