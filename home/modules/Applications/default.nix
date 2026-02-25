@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  tabby = pkgs.callPackage ./tabby.nix;
+  tabby = pkgs.callPackage ./tabby.nix {};
 in
 {
   imports = [
