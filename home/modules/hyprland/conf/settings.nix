@@ -28,7 +28,8 @@
       ];
 
       general = {
-        layout = "dwindle";
+        # layout = "dwindle";
+        layout = "scrolling";
         no_focus_fallback = true;
 
         gaps_in = 5;

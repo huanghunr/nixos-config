@@ -18,7 +18,6 @@
       "SUPER_SHIFT, C, exec, $screenshotToclipboard"
       "SUPER_SHIFT, E, exec, $screenshotEdit"
       "SUPER, L, exec, $desktopManager"
-      "SUPER, Y, exec, yazi"
       "SUPER, F, togglefloating,"
       "SUPER, E, exec, $menu"
       "SUPER, F1, exec, $restartClash"
