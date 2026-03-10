@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   systemd.services.display-manager.environment = {
     QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
@@ -26,8 +26,8 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    wayland.compositor = "kwin";
-    theme = "sddm-astronaut-theme"; # /run/current-system/sw/share/sddm/themes
+    wayland.compositor = pkgs.lib.mkOptionDefault "kwin";
+    theme = "breeze"; # /run/current-system/sw/share/sddm/themes
     extraPackages = with pkgs.kdePackages; [
       qtmultimedia
       qtsvg

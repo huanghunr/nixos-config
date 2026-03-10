@@ -24,6 +24,7 @@
   ++[
     pwntools
     ropgadget
+    one_gadget
   ]
   ++[
     jadx

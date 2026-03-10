@@ -17,6 +17,7 @@
     ./modules/virtualbox.nix
     ./modules/flatpak.nix
     ./modules/sddm.nix
+    ./modules/plasma.nix
   ];
 
   modules = {
@@ -107,8 +108,6 @@
       };
     };
 
-    desktopManager.plasma6.enable = false; # if use Plasma desktop
-
     printing.enable = true; # Enable CUPS to print documents.
 
     pulseaudio.enable = false;
@@ -176,6 +175,7 @@
   };
 
   programs = {
+    plasma_option.enable = true; # if use Plasma desktop
     dconf.enable = true;
     firefox.enable = true;
     clash-verge = {
