@@ -181,6 +181,7 @@
     clash-verge = {
       enable = true;
       tunMode = true;
+      autoStart = true;
     };
     uwsm.enable = true;
     fish = {
@@ -251,7 +252,7 @@
   qt = {
     enable = true;
     platformTheme = "qt5ct";
-    style = "breeze";
+#     style = "breeze";
   };
 
   system.stateVersion = "25.05";
