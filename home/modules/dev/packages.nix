@@ -157,8 +157,6 @@
       ++[
         devenv
       ]
-      ++[
-        qtcreator
-      ]
+      # please develop qt with flake.nix
     );
 }
