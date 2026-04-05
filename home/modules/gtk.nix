@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 {
-  gtk = lib.mkIf (!config.programs.plasma_option.enable) {
+  gtk = lib.mkIf (!config.programs.plasma_home.enable) {
     enable = true;
     theme = {
       name = "adw-gtk3";

@@ -26,6 +26,7 @@
     ./modules/fish.nix
     ./modules/vscode.nix
     ./modules/cursor.nix
+    ./modules/plasma.nix    
 
     ./script
   ];
@@ -76,6 +77,7 @@
     # local programs
     local-ida.enable = true;
     yesplaymusic.enable = true;
+    plasma_home.enable = true;
 
     man.generateCaches = false;
 
