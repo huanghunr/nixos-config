@@ -1,8 +1,14 @@
 {
   pkgs,
+  inputs,
   ...
 }:
-
+let
+  unstable = import inputs.unstablepkgs {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
   # user info
   home.username = "huanghunr";
@@ -30,47 +36,54 @@
     ./script
   ];
 
-  home.packages = with pkgs; [
-    netease-cloud-music-gtk
-    tree
-    wechat
-    microsoft-edge
-    p7zip
-    unrar
-    anyrun
-    nwg-look # gtk theme switcher
-    mpv
-    qqmusic
-    typora
-    thunderbird
-    baidupcs-go
-    speedtest-cli
+  home.packages =
+    (with pkgs; [
+      netease-cloud-music-gtk
+      tree
+      wechat
+      microsoft-edge
+      p7zip
+      unrar
+      anyrun
+      nwg-look # gtk theme switcher
+      mpv
+      qqmusic
+      typora
+      thunderbird
+      baidupcs-go
+      speedtest-cli
 
-    hmcl
-    gimp-with-plugins
-    duckdb
-    libreoffice-qt
-    sops
-    motrix
-    wemeet
-    file
-    rustdesk
-    qq
-    kitty
-    obs-studio
-    fastfetch
+      hmcl
+      gimp-with-plugins
+      duckdb
+      libreoffice-qt
+      sops
+      motrix
+      wemeet
+      file
+      rustdesk
+      qq
+      kitty
+      obs-studio
+      fastfetch
 
-    man
-    man-pages
-    man-pages-posix
-    brave
-  ];
+      man
+      man-pages
+      man-pages-posix
+      brave
+      
+      freerdp
+      google-chrome
+    ])
+    ++ [];
 
   programs = {
     # noctalia-shell.systemd.enable = true; # there is a bug that will start the service again after the screen lock is completed
     # local programs
     local-ida.enable = true;
     yesplaymusic.enable = true;
+
+    man.generateCaches = false;
 
     git = {
       enable = true;

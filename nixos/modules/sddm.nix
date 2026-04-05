@@ -1,9 +1,5 @@
 { pkgs, config, ... }:
 {
-#   systemd.services.display-manager.environment = {
-#     QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
-#   }; #using this environment variable will cause plasma to launch a black screen due to module conflicts
-
   environment.systemPackages = [
     (pkgs.catppuccin-sddm.override {
       flavor = "macchiato";

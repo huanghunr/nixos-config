@@ -70,6 +70,7 @@
     xorg.libSM
     xorg.libICE
     libxcb-cursor
+    libxcb-wm
     gnome2.GConf
     nspr
     nss

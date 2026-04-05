@@ -38,10 +38,11 @@ let
 
 in
 {
-  home.pointerCursor = Bibata-Original-Ice;
+  # disable in kde
+  # home.pointerCursor = Bibata-Original-Ice;
 
   # DPI and Xresources
-  xresources.properties = {
-    "Xft.dpi" = 172;
-  };
+  # xresources.properties = {
+  #   "Xft.dpi" = 172;
+  # };
 }

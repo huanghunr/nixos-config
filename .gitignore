@@ -1,3 +1,4 @@
 nixos/modules/secret.nix
 __pycache__
 home/modules/Noctalia/test.json
+.*
