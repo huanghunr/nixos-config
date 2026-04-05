@@ -25,8 +25,6 @@
       inputs.pwndbg.packages.${pkgs.system}.default
     ]
     ++ [
-      pwntools
-      ropgadget
       one_gadget
     ]
     ++ [
@@ -67,7 +65,6 @@
       # Reverse engineering
       radare2
       apktool
-      ghidra
     ]
     ++ [
       # Forensics

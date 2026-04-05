@@ -4,6 +4,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      set -x PATH $HOME/.npm-global/bin $PATH
     '';
     plugins = [
       # Manually packaging and enable a plugin

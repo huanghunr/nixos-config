@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "agent-skills": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774607140,
+        "narHash": "sha256-0P89BLGEzRUumWKSOEayi+Dal6mIlVumlBgcyk5Qo6s=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "e29bef0e9e56c4cc683cead15a6eda1d6fb1074e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -33,6 +56,22 @@
         "type": "github"
       }
     },
+    "awesome-claude-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771482105,
+        "narHash": "sha256-WBKY3u01O4InYR639U8VDxx+r55elDTEUY8hpsIP5uY=",
+        "owner": "ComposioHQ",
+        "repo": "awesome-claude-skills",
+        "rev": "27904475d1270d8395acf07691966267d5abda2d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ComposioHQ",
+        "repo": "awesome-claude-skills",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1754269165,
@@ -45,6 +84,22 @@
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
+        "type": "github"
+      }
+    },
+    "ctf-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775329555,
+        "narHash": "sha256-UYPquwayAUrbDjzr3xHPs1tWnbmBdqnJ5sOzD+hXlfE=",
+        "owner": "ljagiello",
+        "repo": "ctf-skills",
+        "rev": "e169175c53efc749fa3beee568fe93508418f0e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ljagiello",
+        "repo": "ctf-skills",
         "type": "github"
       }
     },
@@ -611,11 +666,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1764522689,
-        "narHash": "sha256-SqUuBFjhl/kpDiVaKLQBoD8TLD+/cTUzzgVFoaHrkqY=",
+        "lastModified": 1775002709,
+        "narHash": "sha256-d3Yx83vSrN+2z/loBh4mJpyRqr9aAJqlke4TkpFmRJA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8bb5646e0bed5dbd3ab08c7a7cc15b75ab4e1d0f",
+        "rev": "bcd464ccd2a1a7cd09aa2f8d4ffba83b761b1d0e",
         "type": "github"
       },
       "original": {
@@ -814,6 +869,9 @@
     },
     "root": {
       "inputs": {
+        "agent-skills": "agent-skills",
+        "awesome-claude-skills": "awesome-claude-skills",
+        "ctf-skills": "ctf-skills",
         "home-manager": "home-manager",
         "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
@@ -902,11 +960,11 @@
     },
     "unstablepkgs": {
       "locked": {
-        "lastModified": 1764517877,
-        "narHash": "sha256-pp3uT4hHijIC8JUK5MEqeAWmParJrgBVzHLNfJDZxg4=",
+        "lastModified": 1775036866,
+        "narHash": "sha256-ZojAnPuCdy657PbTq5V0Y+AHKhZAIwSIT2cb8UgAz/U=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2d293cbfa5a793b4c50d17c05ef9e385b90edf6c",
+        "rev": "6201e203d09599479a3b3450ed24fa81537ebc4e",
         "type": "github"
       },
       "original": {
