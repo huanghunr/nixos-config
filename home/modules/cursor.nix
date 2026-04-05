@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 let
   getFrom =
@@ -39,7 +39,7 @@ let
 in
 {
   # disable in kde
-  # home.pointerCursor = Bibata-Original-Ice;
+  home.pointerCursor = lib.mkIf (!config.programs.plasma_option.enable) Bibata-Original-Ice;
 
   # DPI and Xresources
   # xresources.properties = {
