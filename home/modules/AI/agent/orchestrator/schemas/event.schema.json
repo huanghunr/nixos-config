@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsec.local/schemas/event.schema.json",
+  "title": "CTF Runtime Event",
+  "type": "object",
+  "required": ["event_id", "event_type", "task_id", "timestamp"],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "new_task",
+        "task_updated",
+        "hint_updated",
+        "attachment_updated",
+        "solve_count_changed",
+        "worker_started",
+        "worker_progress",
+        "worker_stopped",
+        "worker_solved",
+        "worker_failed",
+        "task_cooldown",
+        "task_resumed",
+        "flag_submitted",
+        "flag_printed"
+      ]
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "worker_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true,
+      "default": {}
+    }
+  },
+  "additionalProperties": false
+}

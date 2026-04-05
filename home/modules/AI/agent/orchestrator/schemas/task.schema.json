@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsec.local/schemas/task.schema.json",
+  "title": "CTF Task",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "category",
+    "status",
+    "solved_count",
+    "updated_at"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "crypto",
+        "reverse",
+        "pwn",
+        "web",
+        "forensics",
+        "misc",
+        "unknown"
+      ]
+    },
+    "points": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "solved_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attachments_hash": {
+      "type": "string",
+      "default": ""
+    },
+    "hints_hash": {
+      "type": "string",
+      "default": ""
+    },
+    "priority_score": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "blocked",
+        "cooldown",
+        "solved",
+        "failed"
+      ]
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "last_progress_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cooldown_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "worker_id": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "default": {}
+    }
+  },
+  "additionalProperties": false
+}

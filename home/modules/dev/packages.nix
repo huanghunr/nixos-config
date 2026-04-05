@@ -62,32 +62,6 @@
           lldb
           vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
 
-          #-- python
-          (python313.withPackages (
-            ps: with ps; [
-              # python language server
-              pyright
-              ruff
-
-              pipx # Install and Run Python Applications in Isolated Environments
-              black # python formatter
-              uv # python project package manager
-
-              # my commonly used python packages
-              jupyter
-              ipython
-              pandas
-              requests
-              pyquery
-              pyyaml
-              boto3
-
-              # misc
-              protobuf # protocol buffer compiler
-              numpy
-            ]
-          ))
-
           #-- rust
           rustc
           cargo

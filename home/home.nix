@@ -1,14 +1,7 @@
 {
   pkgs,
-  inputs,
   ...
 }:
-let
-  unstable = import inputs.unstablepkgs {
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
-in
 {
   # user info
   home.username = "huanghunr";
@@ -18,7 +11,8 @@ in
     ./modules/neovim
     ./modules/dev
     ./modules/kitty
-    ./modules/AI
+    ./modules/AI/agent
+    ./modules/AI/packages
     ./modules/hyprland
     ./modules/Noctalia
     ./modules/Applications

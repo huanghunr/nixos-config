@@ -50,6 +50,22 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
+
+    ctf-skills = {
+      url = "github:ljagiello/ctf-skills";
+      flake = false;
+    };
+
+    awesome-claude-skills = {
+      url = "github:ComposioHQ/awesome-claude-skills";
+      flake = false;
+    };
+
+    agent-skills = {
+      url = "github:Kyure-A/agent-skills-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -61,11 +77,15 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      upkgs = import inputs.unstablepkgs {
+        system = system;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs system; };
+        specialArgs = { inherit inputs system upkgs; };
 
         modules = [
 

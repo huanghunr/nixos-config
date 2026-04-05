@@ -1,11 +1,16 @@
 { pkgs, ... }:
 let
-  tabby = pkgs.callPackage ./tabby.nix {};
+  tabby = pkgs.callPackage ./tabby.nix { };
+  blutter = pkgs.callPackage ./blutter.nix { };
 in
 {
   imports = [
     ./ida.nix
     ./yesplaymusic.nix
   ];
-  home.packages = [ tabby ];
+  
+  home.packages = [
+    tabby
+    blutter
+  ];
 }

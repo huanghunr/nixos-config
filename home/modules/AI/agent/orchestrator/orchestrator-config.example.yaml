@@ -1,0 +1,40 @@
+orchestrator:
+  max_concurrency: 3
+  auto_submit: false
+  poll_interval_sec: 300
+  high_freq_poll_interval_sec: 60
+  hard_timeout_min: 45
+  no_progress_min: 15
+  max_failed_attempts: 5
+  cooldown_min: 20
+  category_priority:
+    crypto: 100
+    reverse: 100
+    pwn: 70
+    web: 70
+    forensics: 65
+    misc: 60
+    unknown: 50
+  solved_count_weight: 0.2
+  freshness_bonus: 20
+  changed_bonus:
+    hint_updated: 15
+    attachment_updated: 15
+
+release_windows:
+  # optional organizer-announced release points
+  # format: ISO8601 UTC
+  - "2026-04-01T12:00:00Z"
+
+paths:
+  workspace_root: "."
+  contests_root: "./"
+  contest_dir: "./<contest>"
+  queue_log: "./<contest>/runtime/queue.jsonl"
+  events_log: "./<contest>/runtime/events.jsonl"
+
+credentials:
+  platform_username_env: "CTF_USERNAME"
+  platform_password_env: "CTF_PASSWORD"
+  # if token exists, workers should use token instead of password
+  session_token_env: "CTF_SESSION_TOKEN"
