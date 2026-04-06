@@ -1,4 +1,5 @@
-{...}:{
-  virtualisation.virtualbox.host.enable = false;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+{upkgs,...}:{
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.package = upkgs.virtualbox;
+  users.extraGroups.vboxusers.members = [ "huanghunr" ];
 }

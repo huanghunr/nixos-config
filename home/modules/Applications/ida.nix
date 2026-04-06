@@ -1,11 +1,14 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
 let
+  pkgs = import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/5ae3b07d8d6527c42f17c876e404993199144b6a.tar.gz";
+    sha256 = "sha256-6eeL1YPcY1MV3DDStIDIdy/zZCDKgHdkCmsrLJFiZf0=";
+  }) { system = "x86_64-linux"; };
   mainPath = "${config.home.homeDirectory}/Applications/ida92";
   binaryPath = "${mainPath}/ida";
   iconPath = "${mainPath}/appico.png";
@@ -26,20 +29,22 @@ let
   # check whether the file exists
   hasBinary = builtins.pathExists binaryPath;
 
-  idaPythonEnv = pkgs.python3.withPackages (ps: with ps; [
-    yara-python
-    debugpy
-    tornado
-    keystone-engine 
-    setuptools
-    z3-solver
-    capstone
-    ropper
-    unicorn
-    requests
-    pwntools
-    pycryptodome
-  ]);
+  idaPythonEnv = pkgs.python3.withPackages (
+    ps: with ps; [
+      yara-python
+      debugpy
+      tornado
+      keystone-engine
+      setuptools
+      z3-solver
+      capstone
+      ropper
+      unicorn
+      requests
+      pwntools
+      pycryptodome
+    ]
+  );
 
   idaFhsEnv = pkgs.buildFHSEnv {
     name = fhsEnvName;
@@ -98,7 +103,13 @@ in
     xdg.desktopEntries.ida = {
       exec = "${idaFhsEnv}/bin/${fhsEnvName}";
       terminal = false;
-      inherit name genericName icon categories mimeType;
+      inherit
+        name
+        genericName
+        icon
+        categories
+        mimeType
+        ;
     };
   };
 }
