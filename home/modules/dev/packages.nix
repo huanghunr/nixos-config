@@ -62,6 +62,7 @@
           clang-tools
           lldb
           vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
+          pkgsCross.mingwW64.stdenv.cc
 
           #-- rust
           rustc

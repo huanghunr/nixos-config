@@ -1,5 +1,6 @@
 {
   pkgs,
+  upkgs,
   ...
 }:
 {
@@ -69,13 +70,15 @@
       
       freerdp
       google-chrome
+      
     ])
-    ++ [];
+    ++ [upkgs.reqable];
 
   programs = {
     # noctalia-shell.systemd.enable = true; # there is a bug that will start the service again after the screen lock is completed
     # local programs
     local-ida.enable = true;
+    local-bn.enable = true;
     yesplaymusic.enable = true;
     plasma_home.enable = true;
 

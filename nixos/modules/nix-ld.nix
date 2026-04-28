@@ -39,7 +39,7 @@
     libGL
     libva
     pipewire
-    xorg.libxcb
+    libxcb
     xorg.libXdamage
     xorg.libxshmfence
     xorg.libXxf86vm

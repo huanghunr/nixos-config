@@ -41,7 +41,7 @@
               xorg.libXext
               xorg.libXfixes
               xorg.libXrandr
-              xorg.libxcb
+              libxcb
               xorg.libxkbfile
               alsa-lib
               mesa

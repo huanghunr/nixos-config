@@ -219,7 +219,7 @@
       pkgs.xorg.libXcursor
       pkgs.xdg-utils
       pkgs.xorg.libX11
-      pkgs.xorg.libxcb
+      pkgs.libxcb
       pkgs.xorg.xwininfo
       pkgs.libdrm
       pkgs.libGL

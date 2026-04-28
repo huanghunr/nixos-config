@@ -18,15 +18,15 @@
       };
 
       skills.enable = [
-        "solve-challenge"
-        "ctf-web"
-        "ctf-pwn"
-        "ctf-crypto"
-        "ctf-reverse"
-        "ctf-forensics"
-        "ctf-osint"
-        "ctf-malware"
-        "ctf-misc"
+        # "solve-challenge"
+        # "ctf-web"
+        # "ctf-pwn"
+        # "ctf-crypto"
+        # "ctf-reverse"
+        # "ctf-forensics"
+        # "ctf-osint"
+        # "ctf-malware"
+        # "ctf-misc"
 
         "mcp-builder"
         "skill-creator"

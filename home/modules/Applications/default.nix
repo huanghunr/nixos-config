@@ -7,6 +7,7 @@ in
   imports = [
     ./ida.nix
     ./yesplaymusic.nix
+    ./BinaryNinja.nix
   ];
   
   home.packages = [

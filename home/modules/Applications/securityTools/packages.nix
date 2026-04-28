@@ -20,6 +20,7 @@
       cyberchef
       imhex
       socat
+      frida-tools
     ]
     ++ [
       inputs.pwndbg.packages.${pkgs.system}.default

@@ -12,7 +12,7 @@ let
     pkgs.cups
     pkgs.expat
     pkgs.libxkbcommon
-    pkgs.xorg.libxcb
+    pkgs.libxcb
     pkgs.xorg.libX11
     pkgs.xorg.libXcomposite
     pkgs.xorg.libXdamage
@@ -72,7 +72,7 @@ let
     };
 
     pwno-mcp = {
-      enable = true;
+      enable = false;
       type = "remote";
       url = "http://127.0.0.1:5500/mcp";
     };
@@ -91,11 +91,13 @@ let
     };
 
     scrapling-mcp = {
+      enable = false;
       command = "${scraplingMcpServer}/bin/scrapling-mcp-server";
       args = [ ];
     };
 
     mcp_windbg_http = {
+      enable = false;
       type = "remote"; # start in windows by "mcp-windbg --transport streamable-http --host 127.0.0.1 --port 8000"
       url = "http://127.0.0.1:8000/mcp";
     };
