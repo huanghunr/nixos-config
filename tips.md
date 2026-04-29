@@ -61,3 +61,16 @@ rfkill unblock bluetooth
 
 ### qml或qcc元素偏扁
 设置QT_QUICK_CONTROLS_STYLE = "org.kde.desktop"环境变量，安装对应kdeyy依赖。
+
+
+## bn qt报错
+```
+uanghunr/Hun/workspace took 6s ❯ binaryninja-fhs-env 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+qt.qpa.plugin: Could not load the Qt platform plugin "wayland" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: minimal, eglfs, offscreen, vnc, linuxfb, minimalegl, vkkhrdisplay, xcb, wayland-brcm, wayland-egl, wayland.
+```
+根据往上的方法安装了libxcb-cursor但是不管用。但是发现只要在bn的目录下执行binaryninja-fhs-env可以运行。推测bn对本地文件有依赖，于是使用cd先进入到bn的主目录。

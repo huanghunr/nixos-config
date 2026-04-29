@@ -46,7 +46,7 @@ let
     ]
   );
 
-   binaryninjaFhsEnv = pkgs.buildFHSEnv {
+  binaryninjaFhsEnv = pkgs.buildFHSEnv {
     name = fhsEnvName;
 
     targetPkgs =
@@ -55,8 +55,6 @@ let
         pythonEnv
 
         zlib
-        glib
-        libxml2
         dbus
         fontconfig
         freetype
@@ -68,6 +66,7 @@ let
         xorg.xcbutilkeysyms
         xorg.xcbutilrenderutil
         xorg.xcbutilwm
+        libxcb-cursor
         libxkbcommon
         libglvnd
 
@@ -76,6 +75,8 @@ let
 
         qt6.qtbase
         qt6.qtwayland
+
+        curl
       ]);
 
     profile = ''
@@ -85,7 +86,10 @@ let
     '';
 
     # runScript = "bash";
-    runScript = "${toString binaryPath}";
+    runScript = pkgs.writeShellScript "run-binaryninja" ''
+      cd "${mainPath}"
+      exec "${binaryPath}" "$@"
+    '';
   };
 
 in

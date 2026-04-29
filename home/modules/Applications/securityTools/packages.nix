@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs,upkgs, ... }:
 {
   home.packages =
     with pkgs;
@@ -20,7 +20,7 @@
       cyberchef
       imhex
       socat
-      frida-tools
+      upkgs.frida-tools
     ]
     ++ [
       inputs.pwndbg.packages.${pkgs.system}.default
