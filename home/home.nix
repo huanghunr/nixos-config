@@ -27,7 +27,7 @@
     ./modules/fish.nix
     ./modules/vscode.nix
     ./modules/cursor.nix
-    ./modules/plasma.nix    
+    ./modules/plasma.nix
 
     ./script
   ];
@@ -67,12 +67,16 @@
       man-pages
       man-pages-posix
       brave
-      
+
       freerdp
       google-chrome
-      
+      gh
+
     ])
-    ++ [upkgs.reqable];
+    ++ [
+      upkgs.reqable
+      upkgs.feishu-cli
+    ];
 
   programs = {
     # noctalia-shell.systemd.enable = true; # there is a bug that will start the service again after the screen lock is completed

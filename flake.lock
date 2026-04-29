@@ -56,6 +56,22 @@
         "type": "github"
       }
     },
+    "as0ler-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777301350,
+        "narHash": "sha256-M3P8FcB9P2EsurWwJ/mzp3WjmVmEPflhFhctdTiMb/4=",
+        "owner": "as0ler",
+        "repo": "skills",
+        "rev": "34347fdccc2ab866767e8bde1b43538bfb6fb6f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "as0ler",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "awesome-claude-skills": {
       "flake": false,
       "locked": {
@@ -69,6 +85,22 @@
       "original": {
         "owner": "ComposioHQ",
         "repo": "awesome-claude-skills",
+        "type": "github"
+      }
+    },
+    "awesome-copilot-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777442620,
+        "narHash": "sha256-tN7lMBJ7sLOAmuIFayVZGM/EBl2MpKHK8E3Tr54xZ7U=",
+        "owner": "github",
+        "repo": "awesome-copilot",
+        "rev": "4e1bed268d704dda5d0f865e794ee2e94252ba2f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "github",
+        "repo": "awesome-copilot",
         "type": "github"
       }
     },
@@ -87,19 +119,19 @@
         "type": "github"
       }
     },
-    "ctf-skills": {
+    "feishu-cli": {
       "flake": false,
       "locked": {
-        "lastModified": 1775329555,
-        "narHash": "sha256-UYPquwayAUrbDjzr3xHPs1tWnbmBdqnJ5sOzD+hXlfE=",
-        "owner": "ljagiello",
-        "repo": "ctf-skills",
-        "rev": "e169175c53efc749fa3beee568fe93508418f0e8",
+        "lastModified": 1777464246,
+        "narHash": "sha256-93WiEae1a+SPIKDVsLdOMHUBqsZy9l3xRwqtuIQFBrY=",
+        "owner": "larksuite",
+        "repo": "cli",
+        "rev": "b37adfd0ee5c51800a1e3b933ed2454548be31e8",
         "type": "github"
       },
       "original": {
-        "owner": "ljagiello",
-        "repo": "ctf-skills",
+        "owner": "larksuite",
+        "repo": "cli",
         "type": "github"
       }
     },
@@ -590,6 +622,22 @@
         "type": "github"
       }
     },
+    "local-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777469433,
+        "narHash": "sha256-NpXbgMDQlUjBV++Z6h8yxgiEBPK4yPM+j5sFUz1805g=",
+        "owner": "huanghunr",
+        "repo": "local-skill",
+        "rev": "42b983cd8b11c59d6274a787fbbbd7513ebd65bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "huanghunr",
+        "repo": "local-skill",
+        "type": "github"
+      }
+    },
     "nix-alien": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -870,12 +918,15 @@
     "root": {
       "inputs": {
         "agent-skills": "agent-skills",
+        "as0ler-skills": "as0ler-skills",
         "awesome-claude-skills": "awesome-claude-skills",
-        "ctf-skills": "ctf-skills",
+        "awesome-copilot-skills": "awesome-copilot-skills",
+        "feishu-cli": "feishu-cli",
         "home-manager": "home-manager",
         "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
+        "local-skills": "local-skills",
         "nix-alien": "nix-alien",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",

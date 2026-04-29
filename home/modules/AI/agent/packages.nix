@@ -7,9 +7,10 @@
     agent-skills = {
       enable = true;
 
-      sources.ctf = {
-        path = inputs.ctf-skills;
+      sources.local-skills = {
+        path = inputs.local-skills;
         subdir = ".";
+        idPrefix = "local";
       };
 
       sources.awesome-claude-skills = {
@@ -17,16 +18,44 @@
         subdir = ".";
       };
 
+      sources.awesome-copilot-skills = {
+        path = inputs.awesome-copilot-skills;
+        idPrefix = "gh";
+        subdir = "skills";
+      };
+
+      sources.feishu-skills = {
+        path = inputs.feishu-cli;
+        subdir = "skills";
+        idPrefix = "feishu";
+      };
+      
+      sources.as0ler-skills = {
+        path = inputs.as0ler-skills;
+        subdir = ".";
+        idPrefix = "as0ler";
+      };
+
       skills.enable = [
         # "solve-challenge"
-        # "ctf-web"
-        # "ctf-pwn"
-        # "ctf-crypto"
-        # "ctf-reverse"
-        # "ctf-forensics"
-        # "ctf-osint"
-        # "ctf-malware"
-        # "ctf-misc"
+        "local/ctf-web"
+        "local/ctf-pwn"
+        "local/ctf-crypto"
+        "local/ctf-reverse"
+        "local/ctf-forensics"
+        "local/ctf-osint"
+        "local/ctf-malware"
+        "local/ctf-misc"
+        "local/ctf-ai-ml"
+        "local/nixos-local"
+
+        "feishu/lark-im"
+        "feishu/lark-shared"
+
+        "as0ler/frida"
+        # "as0ler/radare2"
+
+        "gh/gh-cli"
 
         "mcp-builder"
         "skill-creator"

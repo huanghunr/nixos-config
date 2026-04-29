@@ -2,6 +2,7 @@
 let
   tabby = pkgs.callPackage ./tabby.nix { };
   blutter = pkgs.callPackage ./blutter.nix { };
+  lark-cli= pkgs.callPackage ./lark-cli.nix { };
 in
 {
   imports = [
@@ -13,5 +14,6 @@ in
   home.packages = [
     tabby
     blutter
+    lark-cli
   ];
 }

@@ -18,7 +18,7 @@
         };
       }
     ];
-    
+
     shellAliases = {
       ll = "ls -la";
       cl = "clear";

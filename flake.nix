@@ -51,8 +51,8 @@
       url = "github:gmodena/nix-flatpak";
     };
 
-    ctf-skills = {
-      url = "github:ljagiello/ctf-skills";
+    local-skills = {
+      url = "github:huanghunr/local-skill";
       flake = false;
     };
 
@@ -65,6 +65,21 @@
       url = "github:Kyure-A/agent-skills-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+
+    awesome-copilot-skills = {
+      url = "github:github/awesome-copilot";
+      flake = false;
+    };
+
+    feishu-cli = {
+      url = "github:larksuite/cli";
+      flake = false;
+    };
+
+    as0ler-skills= {
+      url = "github:as0ler/skills";
+      flake = false;
     };
   };
 
