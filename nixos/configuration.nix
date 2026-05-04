@@ -39,8 +39,11 @@
     networkmanager.enable = true;
 
     firewall = {
-      allowedTCPPorts = [ 6000 ];
-      # allowedUDPPorts = [ ... ];
+      allowedTCPPorts = [
+        6000
+        9000
+      ];
+      allowedUDPPorts = [ 9000 ];
     };
   };
 
@@ -252,7 +255,19 @@
   qt = {
     enable = true;
     platformTheme = "qt5ct";
-#     style = "breeze";
+    #     style = "breeze";
+  };
+
+  fileSystems."/run/media/huanghunr/Hun" = {
+    device = "/dev/disk/by-uuid/295B7839BB0328B7";
+    fsType = "ntfs";
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "umask=022"
+      "windows_names"
+    ];
   };
 
   system.stateVersion = "25.05";

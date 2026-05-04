@@ -72,6 +72,8 @@
       google-chrome
       gh
 
+      ffmpeg
+
     ])
     ++ [
       upkgs.reqable
