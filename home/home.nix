@@ -78,6 +78,7 @@
     ++ [
       upkgs.reqable
       upkgs.feishu-cli
+      upkgs.gparted
     ];
 
   programs = {
