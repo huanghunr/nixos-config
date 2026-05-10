@@ -57,6 +57,7 @@ let
       uv
       pipx
       conda
+      pillow
     ]
     ++ [
       # Data / notebook

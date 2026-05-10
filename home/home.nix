@@ -74,6 +74,7 @@
 
       ffmpeg
 
+      unzip
     ])
     ++ [
       upkgs.reqable
