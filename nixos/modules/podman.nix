@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{upkgs, ... }:
 {
   virtualisation = {
     containers.enable = true;
@@ -15,5 +15,5 @@
     ];
   };
 
-  environment.systemPackages = [ pkgs.distrobox ]; # distrobox
+  environment.systemPackages = [ upkgs.distrobox ]; # distrobox
 }
